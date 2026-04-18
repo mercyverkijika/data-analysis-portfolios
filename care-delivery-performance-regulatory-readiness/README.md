@@ -245,19 +245,34 @@ A dedicated weekend care team with guaranteed weekend-contracted hours should be
 
 Throughout the analysis, multiple assumptions were made to manage challenges with the data. These assumptions and caveats are noted below:
 
-**Caveat 1 — Medication Recording Rate of 100% requires external validation. Impact: Moderate.**
+**Caveat 1 — Medication Recording Rate of 100% requires external validation.**
+
+***Impact: Moderate.***
+
 If the care management system enforces medication entry for visits flagged as medication visits, the 100% rate may reflect system configuration rather than genuine clinical recording practice. Until confirmed against the source system, this metric is not recommended for use as standalone evidence of compliance in an inspection or commissioner context.
 
-**Caveat 2 — Ambiguous date formats were resolved using UK convention. Impact: Low.**
+**Caveat 2 — Ambiguous date formats were resolved using UK convention.**
+
+***Impact: Low.***
+
 Three columns (scheduled_date, actual_clock_in, actual_clock_out) contained a mixture of YYYY-MM-DD, DD/MM/YYYY, and MM/DD/YYYY within the same field. For dates where the day or month portion exceeded 12, the format was unambiguous. For fully ambiguous dates where both parts were 12 or below, the UK convention of DD/MM/YYYY was applied. A small number of these dates may have been parsed incorrectly, but the volume is insufficient to materially change the direction of any finding.
 
-**Caveat 3 — visit_status_derived is a derived column and underpins every KPI. Impact: High.**
+**Caveat 3 — visit_status_derived is a derived column and underpins every KPI.**
+
+***Impact: High.***
+
 The original visit_status field contained 34 inconsistent variants and demonstrably misattributed statuses relative to documented missed visit reasons. The correct status logic derives each visit's true outcome from actual_duration_mins, planned_duration_mins, and missed_visit_reason using a ±5 minute duration tolerance. A different tolerance assumption would change the distribution of Completed, Completed Late, and Short Visit counts. The ±5 minute threshold is conservative and aligns with UK industry practice.
 
-**Caveat 4 — 7.2% of travel records were excluded due to impossible speed calculations. Impact: Moderate.**
+**Caveat 4 — 7.2% of travel records were excluded due to impossible speed calculations.**
+
+***Impact: Moderate.***
+
 4,204 travel records were flagged as suspect where the implied speed (mileage ÷ travel time) exceeded 60mph or fell below 3mph. These were excluded from all travel time and mileage metrics. The average travel time of 18.0 minutes and travel time ratio of 37.88% are based on the remaining clean records and are considered reliable. The exclusion rate itself is reported as a data governance finding on the CQC compliance dashboard.
 
-**Caveat 5 — Safeguarding_flag_derived is indicative, not exhaustive. Impact: Moderate.**
+**Caveat 5 — Safeguarding_flag_derived is indicative, not exhaustive**.
+
+***Impact: Moderate.***
+
 The derived safeguarding flag was built using a defined list of 19 welfare-related keywords detected in carer notes. Some concerns expressed in language outside the keyword list may be understated; conversely, some keyword matches may reflect routine care events rather than safeguarding concerns. The Safeguarding Compliance Rate of 48% should be read as an indicative minimum. The directional conclusion — significant safeguarding process failure — is robust regardless of minor variation in the derived count.
 
 ---
