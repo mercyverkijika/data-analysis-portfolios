@@ -266,17 +266,21 @@ The derived safeguarding flag was built using a defined list of 19 welfare-relat
 <summary>📁 Repository Structure</summary>
 
 ```
-📦 everwell-cqc-audit
+📦 care-delivery-performance-regulatory-readiness
  ┣ 📂 sql
- ┃ ┣ 📄 step_1_load_data.sql
- ┃ ┣ 📄 step_2_data_profiling.sql
- ┃ ┗ 📄 step_3_data_cleaning.sql
+ ┃ ┣ 📄 00_database_setup.sql
+ ┃ ┣ 📄 01_data_profiling.sql
+ ┃ ┣ 📄 02_data_cleaning.sql
+ ┃ ┣ 📄 03_clean_visits.sql
+ ┃ ┣ 📄 04_dim_tabels.sql
+ ┃ ┣ 📄 05_fact_visits.sql
+ ┃ ┗ 📄 06_data_validation.sql
  ┣ 📂 excel
- ┃ ┗ 📄 DQ_Issue_Log.xlsx
+ ┃ ┗ 📄 DQ_Issue_Log_Everwell_Care_Services.xlsx
  ┣ 📂 powerbi
- ┃ ┗ 📄 Everwell_CQC_Dashboard.pbix
  ┣ 📂 docs
- ┃ ┗ 📄 Measure_Definitions_Source_of_Truth.md
+ ┃ ┣ 📄 00_analysis_report.md
+ ┃ ┗ 📄 01_business_brief.md
  ┗ 📄 README.md
 ```
 
