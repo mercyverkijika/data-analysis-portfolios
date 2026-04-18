@@ -1,10 +1,10 @@
+
 -- =========================================
 -- DATABASE SETUP
 -- =========================================
--- Project: Care Delivery Performance & Regulatory Readiness Analysis
+-- Project: Care Delivery Performance & CQC Regulatory Readiness Analysis
 -- Purpose: Create domain-level analytics database for domiciliary care analysis
 -- Author: Mercy Burinyuy
--- Date: March 2026
 -- =========================================
 
 CREATE DATABASE IF NOT EXISTS domiciliary_care_analytics;
@@ -127,4 +127,3 @@ WHERE visit_id LIKE 'VIS-%';
 SELECT * 
 FROM  stg_visits_raw 
 LIMIT 20;
-
