@@ -1,316 +1,213 @@
-
-# Care Delivery Performance & CQC Regulatory Readiness Analysis Report
-## Everwell Care Services Ltd 
+﻿# Care Delivery Performance & CQC Regulatory Readiness Analysis Report
+## Everwell Care Services Ltd
 **Prepared by:** Mercy Verkijika
 
 **Classification:** Confidential
 
 ---
 
+---
+Interactive Dashboard: [View on Power BI Service](#) - explore all findings with live filters, drill-throughs, and area-level breakdowns.
+
+---
+
 ## Executive Summary
 
-Everwell Care Services Ltd is not inspection-ready. Across **68,973 accountable visits** delivered between January 2024 and December 2025, the organisation achieved a Visit Completion Rate of **57.65%** and a Care Delivery Rate of **59.69%** — both less than two-thirds of the 95% target set by commissioners and the CQC.
+Everwell Care Services Ltd is not ready for inspection. Across 68,973 accountable visits delivered between January 2024 and December 2025, the organisation achieved a Visit Completion Rate of 57.65% and a Care Delivery Rate of 59.69%. Both are well below the 95% target set by commissioners and the CQC.
 
-Three findings define the organisational position:
+Three findings define the position:
 
-> **1.** More than 40% of all accountable visits were either missed entirely (14.80%) or delivered short of the commissioned duration (27.55%), leaving clients routinely without their full care.
+- More than 40% of all accountable visits were either missed entirely (14.80%) or delivered short of the commissioned duration (27.55%), leaving clients without their full care.
+- 52% of welfare concerns identified in carer notes were never formally escalated as safeguarding alerts. This is a statutory compliance failure under the Care Act 2014.
+- Carers are spending 37.88% of their total field time travelling rather than delivering care. This scheduling inefficiency is the root cause of short visits, late arrivals, and carer overload across all 25 service areas.
 
-> **2.** 52% of welfare concerns identified in carer notes were never formally escalated as safeguarding alerts — a statutory compliance failure carrying direct legal exposure under the Care Act 2014.
+Headline KPI Scorecard
 
-> **3.** Carers are spending 37.88% of their total field time travelling rather than delivering care. This structural scheduling inefficiency is the root cause of short visits, late arrivals, and carer overload across all 25 service areas.
+![Headline KPI Scorecard](<Screenshot 2026-04-19 075240.png>)
 
-### Headline KPI Scorecard
-
-| KPI                          | Result   | Target   | Status        |
-| ---------------------------- | -------- | -------- | ------------- |
-| Visit Completion Rate        | 57.65%   | ≥ 95%    | 🔴 Critical    |
-| Care Delivery Rate           | 59.69%   | ≥ 95%    | 🔴 Critical    |
-| Missed Visit Rate            | 14.80%   | ≤ 2%     | 🔴 Critical    |
-| Short Visit Rate             | 27.55%   | ≤ 3%     | 🔴 Critical    |
-| Punctuality Rate             | 68.78%   | ≥ 90%    | 🔴 Critical    |
-| Safeguarding Compliance Rate | 48.00%   | ≥ 98%    | 🔴 Critical    |
-| Continuity Rate              | 68.5%    | ≥ 95%    | 🔴 Critical    |
-| Utilisation Rate             | 62.12%   | ≥ 90%    | 🔴 Critical    |
-| Travel Time %                | 37.88%   | ≤ 25%    | 🔴 Critical    |
-| Avg Travel Time              | 18.0 min | ≤ 15 min | 🟡 Approaching |
-| Medication Recording Rate    | 100.00%  | ≥ 98%    | 🟢 Met*        |
-| Data Quality Score           | 69.09%   | ≥ 95%    | 🔴 Critical    |
-
-*Requires external validation — see Data Notes*
+*Requires external validation. See Data Notes.*
 
 ---
 
 ## Data Notes
 
-The following should be considered before presenting findings to external stakeholders:
+Before presenting these findings externally, note the following:
 
 - All metrics are drawn from 75,000 validated records after deduplication of 2,250 exact duplicate rows.
-- **291 visits were excluded** from all KPI calculations — these were scheduling errors and double bookings that were never real scheduled visits.
-- **6,544 external visits** (client cancelled, client hospitalised) are excluded from performance metrics. The organisation is not accountable for these outcomes.
-- All KPIs are calculated against **68,973 accountable visits** — visits where Everwell had full operational control.
-- `visit_status_derived` is used throughout in place of the original `visit_status` field, which contained 34 inconsistent variants and demonstrably misattributed statuses.
-- **4,204 travel records flagged as suspect** (implied speeds above 60mph or below 3mph) were excluded from travel-related calculations only — Avg Travel Time, Total Travel Time, Travel Time Ratio, Avg Mileage, and Total Mileage. These visits remain in all other KPI calculations.
-- The Medication Recording Rate of 100% requires validation against the source care management system before being used as evidence in an inspection context.
+- 291 visits were excluded from all KPI calculations because they were scheduling errors or double bookings.
+- 6,544 external visits (client cancelled, client hospitalised) are excluded from performance metrics. The organisation is not accountable for these outcomes.
+- All KPIs are calculated against 68,973 accountable visits, where Everwell had full operational control.
+- `visit_status_derived` is used throughout instead of the original `visit_status` field, which contained 34 inconsistent variants and misattributed statuses.
+- 4,204 travel records flagged as suspect (implied speeds above 60mph or below 3mph) were excluded from travel-related calculations only: Average Travel Time, Total Travel Time, Travel Time Ratio, Average Mileage, and Total Mileage. These visits remain in all other KPI calculations.
+- The Medication Recording Rate of 100% requires validation against the source care management system before being used as inspection evidence.
 
 ---
 
-## Section 1 — Service Delivery Performance
-
-### KPI Summary
-
-| KPI                   | Result      | Target | Status     |
-| --------------------- | ----------- | ------ | ---------- |
-| Visit Completion Rate | 57.65%      | ≥ 95%  | 🔴 Critical |
-| Care Delivery Rate    | 59.69%      | ≥ 95%  | 🔴 Critical |
-| Missed Visit Rate     | 14.80%      | ≤ 2%   | 🔴 Critical |
-| Short Visit Rate      | 27.55%      | ≤ 3%   | 🔴 Critical |
-| Punctuality Rate      | 68.78%      | ≥ 90%  | 🔴 Critical |
-| Commissioned Hours    | ~38,000 hrs | —      | Reference  |
-| Delivered Hours       | ~23,000 hrs | —      | Reference  |
-| Undelivered Hours     | ~15,000 hrs | —      | Reference  |
+## Section 1 - Service Delivery Performance
 
 ---
 
-### Insight 1 — Visit completion is 37 percentage points below target with no improving trend across 24 months
+### Insight 1 - Visit completion is 37 percentage points below target, with no improving trend across 24 months
 
-**The finding:** The Visit Completion Rate of 57.65% has remained consistent from January 2024 through December 2025. Monthly trend data shows the Care Delivery Rate oscillating between approximately 54% and 62% with no upward trajectory. Two full years of flat performance confirms this is not a temporary dip — it is an embedded structural failure.
+**The finding:** The Visit Completion Rate of 57.65% has been stable from January 2024 through December 2025. The Care Delivery Rate has hovered between 54% and 62% with no upward movement. Two years of flat performance show this is not a temporary dip.
 
-**Why it matters:** At 57.65% completion, clients are receiving care on fewer than 6 in 10 scheduled visits. Local authority commissioners pay for full visit delivery. An organisation consistently delivering at this level is contractually exposed to financial clawback and contract suspension.
+**Why it matters:** At 57.65% completion, clients are receiving care on fewer than 6 in 10 scheduled visits. Commissioners pay for full visit delivery, so this level of performance exposes the organisation to financial clawback and potential contract review.
 
-**Possible root cause:** Planned visit durations and travel time allocations are insufficient relative to actual demand. Carers are being given rota slots that are structurally impossible to deliver in full — not because of individual failure, but because the scheduling model does not reflect reality.
+**Possible cause:** Planned visit durations and travel time allocations do not match actual demand. Carers are being given rota slots that are impossible to deliver in full because the scheduling model does not reflect reality.
 
-**Business risk:** If commissioners review delivered versus commissioned hours, the 40-percentage-point gap would trigger a contract performance review. If the CQC inspects, a completion rate below 60% would likely result in Requires Improvement or Inadequate under Safe.
+**Risk:** If commissioners compare delivered versus commissioned hours, the 40-point gap would trigger a contract performance review. A CQC inspection would likely rate this as Requires Improvement or Inadequate under Safe.
 
-**Action required:** Conduct an urgent review of rota design. Planned visit durations must be recalibrated against actual delivery data by care category. Travel time must be built into rotas as a genuine allowance, not an afterthought.
-
----
-
-### Insight 2 — 27.55% of visits are short — call clipping is the largest single driver of undelivered care
-
-**The finding:** More than 1 in 4 visits are classified as short — the carer attended but left more than 5 minutes before the commissioned end time. Combined with a 14.80% missed visit rate, over 40% of all accountable visits are either absent or incomplete. Of approximately 38,000 commissioned hours, roughly **15,000 hours were not delivered** as specified.
-
-**Why it matters:** Short visits — commonly referred to as call clipping in the domiciliary care sector — are one of the most scrutinised practices under the CQC's Safe key question. For elderly clients with dementia, complex medication needs, or mobility limitations, even 5–10 minutes of missed care time can have direct health consequences.
-
-**Possible root cause:** Carers are under-scheduled relative to client need and are leaving early to reach the next appointment on time. The 37.88% travel time ratio (discussed in Section 2) confirms that insufficient travel time in rotas creates a cascade effect where every visit after the first is at risk of being shortened.
-
-**Business risk:** This is the primary financial exposure in the dataset. Commissioners paying for full visit durations are receiving a fraction of the commissioned service. Legal liability arises if a client experiences harm during a shortened visit that was documented as completed.
-
-**Action required:** Introduce a rota design standard that builds realistic travel time between visits. Carers must be supported to record honest clock-out times rather than scheduled end times. Short visit frequency should be tracked weekly as a carer-level KPI in supervision.
+**Recommended action:** Review rota design urgently. Recalibrate planned visit durations by care category and build travel time into rotas as a genuine allowance.
 
 ---
 
-### Insight 3 — Palliative Care is delivering at 36.29% — a 35-point gap versus the best performing category
+### Insight 2 - 27.55% of visits are short, making call clipping the largest single driver of undelivered care
 
-**The finding:**
+**The finding:** More than 1 in 4 visits are short because the carer left more than 5 minutes before the scheduled end time. With the 14.80% missed visit rate, over 40% of accountable visits are either absent or incomplete. Of about 38,000 commissioned hours, roughly 15,000 were not delivered as specified.
 
-| Care Category             | Delivery Rate |
-| ------------------------- | ------------- |
-| Medication Administration | 71.62%        |
-| Personal Care             | 67.55%        |
-| Dementia Care             | 51.90%        |
-| Companionship / Wellbeing | 51.69%        |
-| **Palliative Care**       | **36.29%**    |
+**Why it matters:** Short visits are one of the most scrutinised practices under the CQC's Safe key question. For clients with dementia, complex medication needs, or mobility limitations, even 5 to 10 minutes of missed care can have direct health consequences.
 
-Palliative Care accounts for approximately 2,500 under-delivered hours — the joint highest of any category alongside Dementia Care.
+**Possible cause:** Carers are under-scheduled and leave early to get to the next appointment on time. The 37.88% travel time ratio shows that insufficient travel allowance in the rota creates a cascade effect that causes visits to be shortened.
 
-**Why it matters:** Palliative care clients are approaching end of life with complex, time-sensitive needs involving pain management, comfort positioning, medication administration, and family support. A delivery rate of 36.29% means these clients receive care in barely 1 in 3 scheduled visits. This is a patient dignity and safety issue of the highest order.
+**Risk:** This is the main financial exposure. Commissioners are paying for full visit durations but receiving a fraction of the commissioned service. There is also legal risk if a shortened visit leads to harm.
 
-**Possible root cause:** Palliative care visits are typically longer (45–60 minutes) and require experienced carers. If the organisation does not ring-fence specialist carers for this category, rota pressure results in these visits being the first shortened or skipped when carers are running behind.
-
-**Business risk:** CQC inspectors give end-of-life care heightened scrutiny under both Safe and Caring. A 36.29% delivery rate would almost certainly result in a finding of Inadequate under Safe for this category. There is also direct risk of harm to clients and reputational risk if families escalate complaints.
-
-**Action required:** Ring-fence a dedicated cohort of senior carers for palliative care visits. These visits should never be shortened or missed when rotas are under pressure. The Registered Manager should be briefed on this finding immediately.
+**Recommended action:** Set a rota standard that includes realistic travel time between visits. Encourage carers to record actual clock-out times and track short visits weekly as a carer-level KPI.
 
 ---
 
-### Insight 4 — The Bedtime/Night Round reaches as low as 23.46% on Monday nights — chronically understaffed
+### Insight 3 - Palliative Care is delivering at 36.29%, a 35-point gap versus the best performing category
 
-**The finding:**
+**The finding:** Palliative Care accounts for about 2,500 under-delivered hours, the joint highest of any category alongside Dementia Care. These clients are approaching end of life with complex, time-sensitive care needs. A delivery rate below 40% for this cohort is the most serious patient safety risk in the dataset.
 
-|           | Morning Round | Lunchtime Round | Tea-Time Round | Bedtime/Night Round |
-| --------- | ------------- | --------------- | -------------- | ------------------- |
-| Monday    | 61.94%        | 57.50%          | 60.50%         | **23.46%**          |
-| Tuesday   | 61.91%        | 56.84%          | 60.02%         | **26.32%**          |
-| Wednesday | 60.84%        | 55.00%          | 61.33%         | **35.38%**          |
-| Thursday  | 60.65%        | 55.22%          | 61.51%         | **40.93%**          |
-| Friday    | 61.05%        | 58.02%          | 60.60%         | **41.21%**          |
-| Saturday  | 58.72%        | 54.54%          | 59.83%         | **32.93%**          |
-| Sunday    | 59.88%        | 54.90%          | 59.17%         | **46.12%**          |
+**Why it matters:** Palliative care clients have complex, time-sensitive needs involving pain management, comfort positioning, medication administration, and family support. A 36.29% delivery rate means these clients receive care in barely 1 in 3 scheduled visits.
 
-**Why it matters:** The Bedtime/Night Round covers a critical period — bedtime medication, comfort positioning, and overnight safety. On Mondays, three in four clients are not receiving their scheduled bedtime visit. For clients on evening medication regimes or at fall risk, this represents a direct patient safety gap.
+**Possible cause:** Palliative care visits are longer and require experienced carers. Without specialist carers ring-fenced for this category, these visits are the first to be shortened or skipped when the rota is under pressure.
 
-**Possible root cause:** This shift carries the fewest carers and the most difficult working conditions. Monday nights are particularly poor because weekend carers rotating off shift leave Monday evening rotas thin.
+**Risk:** CQC inspectors treat end-of-life care with heightened scrutiny under Safe and Caring. This delivery rate would almost certainly result in an Inadequate finding for this category. There is also reputational risk if families escalate complaints.
 
-**Business risk:** CQC inspectors reviewing incident data alongside delivery patterns will see that the period of lowest completion coincides with the highest-risk time for client safety. This is a specific enforcement risk under Safe.
-
-**Action required:** Recruit or designate dedicated carers for the Bedtime/Night Round. Consider enhanced pay rates for this shift to improve recruitment. Measure improvement monthly and report to the board.
+**Recommended action:** Ring-fence a dedicated cohort of senior carers for palliative care visits. These visits should not be shortened or missed when rotas are under pressure, and the Registered Manager should be briefed immediately.
 
 ---
 
-## Section 2 — Workforce Efficiency
+### Insight 4 - The Bedtime/Night Round drops to 23.46% on Monday nights, indicating chronic understaffing
 
-### KPI Summary
+**The finding:** The Bedtime/Night Round is chronically understaffed. This is the period of highest vulnerability for clients, and completion rates below 25% put bedtime medication, comfort positioning, and overnight safety checks at risk.
 
-| KPI              | Result   | Target   | Status        |
-| ---------------- | -------- | -------- | ------------- |
-| Utilisation Rate | 62.12%   | ≥ 90%    | 🔴 Critical    |
-| Continuity Rate  | 68.5%    | ≥ 95%    | 🔴 Critical    |
-| Travel Time %    | 37.88%   | ≤ 25%    | 🔴 Critical    |
-| Avg Travel Time  | 18.0 min | ≤ 15 min | 🟡 Approaching |
+**Why it matters:** Monday nights are especially poor, with three in four clients not receiving their scheduled bedtime visit. For clients on evening medication or at fall risk, this is a direct patient safety gap.
 
----
+**Possible cause:** This shift has the fewest carers and the hardest working conditions. Weekend carers rotating off shift leave Monday evening rotas thin.
 
-### Insight 5 — Carers spend 37.88% of field time travelling — the organisation pays for nearly 2 hours of driving per 3 hours of care
+**Risk:** Inspectors will see the lowest completion period aligned with the highest client safety risk. That creates a specific enforcement risk under Safe.
 
-**The finding:**
-
-| Area      | Care Time | Travel Time |
-| --------- | --------- | ----------- |
-| Bitterne  | 62.73%    | 37.27%      |
-| Hedge End | 61.49%    | 38.51%      |
-| Shirley   | 62.85%    | 37.15%      |
-| Millbrook | 63.30%    | 36.70%      |
-| Bassett   | 63.75%    | 36.25%      |
-
-Every area in the top 10 shows travel consuming between 36% and 39% of total field time — virtually identical across geographically different areas.
-
-**Why it matters:** At an average pay rate of approximately £12.95 per hour, every hour of unnecessary travel is a direct cost generating no care value. More critically, a carer spending 38 minutes per hour travelling arrives at the next client late, leaves early to maintain the rota, and has no buffer for a client who needs extra time. The short visit problem and the travel problem are the same problem from different angles.
-
-**Possible root cause:** The uniformity across all areas confirms this is a scheduling architecture failure, not a geographic one. Carers are not assigned to geographic clusters — they cover the full 25-area service per shift, crossing multiple areas daily.
-
-**Business risk:** The organisation is funding a third of its carer workforce time on non-care activity. Each 1% reduction in travel time ratio releases approximately 680 additional care hours per month for client delivery.
-
-**Action required:** Implement geographic zoning immediately. Pilot in Bitterne and Hedge End — the two highest-volume areas — assigning each carer to a cluster of 2–3 adjacent areas per shift. Target: reduce Travel Time % from 37.88% toward ≤30% within 90 days.
+**Recommended action:** Recruit or designate dedicated carers for the Bedtime/Night Round. Consider enhanced pay rates for this shift, and measure progress monthly.
 
 ---
 
-### Insight 6 — Carer workload ranges from 162 to 826.6 average hours — a five-fold difference creating fragile capacity
+## Section 2 - Workforce Efficiency
 
-**The finding:** A small cohort of high-volume carers at 600–800 average hours manage 1,500–2,000 visits each. The top 10% of carers carry a disproportionate share of the total workload. Despite this disparity, completion rates are uniform across both high and low workload carers — confirming the problem is systemic, not individual.
+### Insight 5 - Carers spend 37.88% of field time travelling, meaning nearly 2 hours of driving per 3 hours of care
 
-**Why it matters:** When high-volume carers take sick leave — already the second-largest documented reason for missed visits at approximately 1,700 instances — the impact on the rota is outsized. The organisation has concentrated fragility into a small number of individuals.
+**The finding:** Travel consumes 36 to 39% of total field time across the top 10 areas, showing the problem is consistent and not location-specific.
 
-**Possible root cause:** Visits are assigned to whoever is available rather than being distributed to a workload cap. It may also reflect a retention problem: the organisation relies on its most reliable carers because overall headcount is insufficient.
+**Why it matters:** At roughly £12.95 per hour, every hour of unnecessary travel is a direct cost with no care value. A carer spending 38 minutes per hour travelling arrives late, leaves early, and has no buffer for extra client time.
 
-**Business risk:** Overworked carers are more likely to leave, more likely to make errors, and more likely to take sick leave — each of which worsens service delivery directly.
+**Possible cause:** The issue is scheduling architecture, not geography. Carers are not assigned to geographic clusters and cover the full 25-area service each shift.
 
-**Action required:** Introduce a weekly workload cap per carer. Identify carers above 600 average hours and redistribute where possible. Commission a staffing needs analysis to determine whether headcount is the root constraint.
+**Risk:** The organisation is effectively paying a third of carer time for non-care activity. Each 1% reduction in travel time ratio frees about 680 care hours per month.
 
----
-
-### Insight 7 — Weekend missed visits are structurally higher — Saturday and Sunday are running approximately 300 more missed visits per day than weekdays
-
-**The finding:** Accountable visits remain consistent across all seven days at approximately 9,700–9,900. However, missed visits spike on Saturday (approximately 1,700) and Sunday (approximately 1,600) versus weekday levels of 1,300–1,400. The organisation is scheduling the same volume with fewer available carers.
-
-**Why it matters:** The CQC explicitly assesses whether quality is maintained at weekends. A consistent weekend performance gap signals a two-tier service — a direct finding risk under Safe and Responsive.
-
-**Possible root cause:** Weekend staffing relies on a structurally smaller pool of available carers. Without dedicated weekend contracts or enhanced pay, this gap persists indefinitely.
-
-**Business risk:** Local authority contracts typically specify consistent seven-day service delivery. A demonstrable weekend performance gap is a contractual risk and a safeguarding risk for clients without weekday-to-weekend continuity.
-
-**Action required:** Establish a dedicated weekend care team with guaranteed weekend-contracted hours. Introduce a weekend on-call coordinator with authority to arrange emergency cover. Target: weekend missed rate within 2 percentage points of weekday rate within 90 days.
+**Recommended action:** Implement geographic zoning immediately. Pilot within Bitterne and Hedge End, assigning each carer to 2 to 3 adjacent areas per shift. Aim to reduce Travel Time % from 37.88% toward 30% within 90 days.
 
 ---
 
-### Insight 8 — Continuity Rate of 68.5% means nearly 1 in 3 visits involves an unfamiliar carer
+### Insight 6 - Carer workload ranges from 162 to 826.6 average hours, creating fragile capacity
 
-**The finding:** 31.5% of all accountable visits involve a carer the client has not recently seen. For the 13,021 Dementia Care visits in the dataset, continuity of carer is not a quality preference — it is a clinical need.
+**The finding:** A small cohort of carers at 600 to 800 average hours manage 1,500 to 2,000 visits each. The top 10% carry a disproportionate share of the workload, while completion rates remain uniform across all carers.
 
-**Why it matters:** An unfamiliar carer visiting a dementia client causes genuine distress and increases the risk of missed welfare observations. A carer who knows their client will notice changes in condition that a new carer cannot. Poor continuity also reduces care efficiency.
+**Why it matters:** When high-volume carers take sick leave, the impact on the rota is outsized. The organisation has concentrated fragility into a small number of individuals.
 
-**Possible root cause:** Carers are not assigned to defined client caseloads. Scheduling assigns whoever is available across the full area, so clients see different carers on consecutive visits.
+**Possible cause:** Visits are assigned to whoever is available rather than being capped by workload. This may also reflect a retention problem, where the most reliable carers are overloaded because overall headcount is insufficient.
 
-**Business risk:** The CQC assesses continuity under Caring. A 68.5% rate, particularly across dementia and palliative care clients, could be cited as a finding in an inspection report.
+**Risk:** Overworked carers are more likely to leave, make errors, and take sick leave. That worsens service delivery directly.
 
-**Action required:** Introduce a named carer model. Each client should have a primary carer and a designated backup. The rota system should always attempt primary carer assignment first. Track continuity rate monthly at team level.
-
----
-
-## Section 3 — Care Quality & CQC Compliance
-
-### KPI Summary
-
-| KPI                          | Result  | Target | Status         |
-| ---------------------------- | ------- | ------ | -------------- |
-| Safeguarding Compliance Rate | 48.00%  | ≥ 98%  | 🔴 Critical     |
-| Medication Recording Rate    | 100.00% | ≥ 98%  | 🟢 Met*         |
-| Incident Rate                | 3.89%   | ≤ 2%   | 🔴 Above Target |
-| Data Quality Score           | 69.09%  | ≥ 95%  | 🔴 Critical     |
-| Carer Notes Completion       | 73.17%  | ≥ 90%  | 🔴 Below Target |
-| Alert Compliance Rate        | 73.22%  | ≥ 90%  | 🔴 Below Target |
-
-*Requires external validation*
+**Recommended action:** Introduce a weekly workload cap per carer. Identify carers above 600 average hours and redistribute assignments where possible. Commission a staffing needs analysis to determine whether headcount is the root constraint.
 
 ---
 
-### Insight 9 — Safeguarding Compliance Rate is 48% — 52% of welfare concerns were never formally escalated
+### Insight 7 - Weekend missed visits are structurally higher, with 300 more missed visits per day than weekdays
 
-**The finding:**
+**The finding:** Accountable visits are consistent across the week, but missed visits spike on Saturday and Sunday by about 300 more per day than weekdays.
 
-| Area                | Safeguarding Compliance |
-| ------------------- | ----------------------- |
-| Hythe               | 37.50%                  |
-| Netley              | 40.91%                  |
-| Hamble              | 42.00%                  |
-| Thornhill           | 42.15%                  |
-| St Denys            | 42.19%                  |
-| Chandlers Ford      | 43.55%                  |
-| **All Areas Total** | **48.00%**              |
+**Why it matters:** The CQC explicitly assesses whether quality is maintained at weekends. A consistent weekend gap signals a two-tier service and a direct finding risk under Safe and Responsive.
 
-The safeguarding compliance trend oscillates between 30% and 50% across the full 24-month period with no improvement. Every area performs below 45%. This has been consistently broken for two years.
+**Possible cause:** Weekend staffing relies on a smaller pool of carers. Without dedicated weekend contracts or enhanced pay, the gap will persist.
 
-**Why it matters:** When a carer notes "New bruise on upper arm, client cannot explain how" or "Medication found already removed from blister pack, unclear if taken" and no safeguarding alert is raised, that concern exists on paper and nowhere else. There is no escalation, no investigation, no multi-agency contact. This is a statutory failure under the Care Act 2014.
+**Risk:** Contracts typically require consistent seven-day service delivery. A weekend performance gap is a contractual risk and a safeguarding risk for clients without continuity.
 
-**Possible root cause:** Two systemic failures are operating simultaneously. Carers are applying personal judgement about what constitutes a safeguarding threshold rather than following a clear policy. The care management system does not prompt the carer to consider a formal referral when note content suggests a welfare concern.
-
-**Business risk:** This is the highest-priority risk in the entire report. A CQC inspection that reviews carer notes alongside the safeguarding register and finds a 52% gap would result in Inadequate under Safe. In cases where a client subsequently experienced harm following a documented but unescalated concern, the organisation faces civil liability and potential prosecution under the Safeguarding Vulnerable Groups Act.
-
-**Action required — Immediate:** The Designated Safeguarding Lead must review all visits with clinically significant carer notes where no formal flag was raised. Historical concerns still requiring escalation to the local authority safeguarding team should be referred without delay.
-
-**Action required — Structural:** All 65 carers must complete mandatory safeguarding recognition refresher training within 30 days. The care management system must be configured to prompt "Does this note indicate a safeguarding concern?" when specific keyword content is detected before a note can be submitted.
+**Recommended action:** Establish a dedicated weekend care team with guaranteed weekend-contracted hours. Introduce a weekend on-call coordinator with authority to arrange emergency cover. Aim to bring weekend missed rate within 2 percentage points of weekday rate within 90 days.
 
 ---
 
-### Insight 10 — Incident Rate of 3.89% is almost double the target — and the trend is flat across 2024 and 2025
+### Insight 8 - Continuity Rate of 68.5% means nearly 1 in 3 visits involves an unfamiliar carer
 
-**The finding:** The Incident Rate of 3.89% has remained flat throughout both years. Visit volumes with carer notes run at 3,000–4,500 per month while incidents hold at approximately 3.5–4.5%. The organisation is not catching clinical concerns early before they escalate.
+**The finding:** 31.5% of accountable visits involve a carer the client has not recently seen. For 13,021 Dementia Care visits, continuity is not a quality preference, it is a clinical need.
 
-**Why it matters:** An elevated and flat incident rate signals that the early intervention mechanism — identifying welfare concerns in notes before they become reportable incidents — is not functioning. The safeguarding process failure in Insight 9 is directly connected to this elevated rate.
+**Why it matters:** An unfamiliar carer visiting a dementia client causes distress and increases the risk of missed welfare observations. A carer who knows their client will notice changes in condition that a new carer cannot.
 
-**Possible root cause:** When concerns in carer notes are not escalated, clients do not receive a welfare review or increased monitoring. The underlying issue continues unchecked until it becomes serious enough to require a formal incident report.
+**Possible cause:** Carers are not assigned to defined caseloads. Scheduling assigns whoever is available across the full area.
 
-**Business risk:** A flat, above-target incident rate with no improving trend signals that the organisation's quality assurance processes are not working. Regulators expect rates to be declining as a result of proactive management.
+**Risk:** The CQC assesses continuity under Caring. A 68.5% rate, especially in dementia and palliative care, could be cited as a finding.
 
-**Action required:** Implement a weekly clinical review: a senior care coordinator should review all visits with clinically significant carer notes and determine whether each requires a safeguarding referral, a care plan review, or increased monitoring. This is the early intervention mechanism the data shows is currently absent.
-
----
-
-### Insight 11 — Data Quality Score is 69.09% — the organisation cannot fully evidence its own care to a CQC inspector
-
-**The finding:**
-
-| Metric                 | Rate    |
-| ---------------------- | ------- |
-| Data Quality Score     | 69.09%  |
-| Carer Notes Completion | 73.17%  |
-| Alert Compliance       | 73.22%  |
-| Mood Recording Rate    | ~89.00% |
-
-Both Carer Notes Completion and Alert Compliance sit at approximately 73%, flat across the entire reporting period. In 30.91% of completed visits, at least one key documentation field is missing.
-
-**Why it matters:** During a CQC inspection, the organisation must demonstrate with records that care was delivered, welfare was monitored, and concerns were acted upon. Where notes are absent, that evidence does not exist. Poor documentation also prevents effective internal quality management — patterns of deterioration in individual clients cannot be identified from incomplete records.
-
-**Possible root cause:** Documentation burden falls on carers who are already under time pressure from short visit schedules and excessive travel time. A carer who has just ended a visit 5 minutes early to make the next appointment does not have the time or capacity to complete thorough notes. The system generates conditions that make good documentation structurally difficult.
-
-**Business risk:** A Data Quality Score of 69.09% is a direct CQC finding risk under Well-Led. It also limits the organisation's ability to defend itself in any regulatory or legal challenge requiring contemporaneous records.
-
-**Action required:** Introduce structured note templates in the care management system — drop-down selections for routine visits reduce documentation time to under 60 seconds. Set documentation completion as a team performance indicator in weekly supervision.
+**Recommended action:** Introduce a named carer model. Each client should have a primary carer and a designated backup. The rota system should prioritise primary carer assignment and track continuity monthly.
 
 ---
 
-## Section 4 — Recommendations
+## Section 3 - Care Quality & CQC Compliance
 
-### Immediate Actions — Within 30 Days
+### Insight 9 - Safeguarding Compliance Rate is 48%, with 52% of welfare concerns never formally escalated
+
+**The finding:** Safeguarding compliance has stayed between 30% and 50% over 24 months, with every area below 45%.
+
+**Why it matters:** When carers note concerns such as bruises or medication issues and no safeguarding alert is raised, those concerns are documented but not acted on. That is a statutory failure under the Care Act 2014.
+
+**Possible cause:** Carers are using personal judgement rather than a clear policy. The care management system does not prompt a formal referral when note content suggests a welfare concern.
+
+**Risk:** This is the highest-priority risk in the report. A CQC inspection that finds a 52% escalation gap would likely result in Inadequate under Safe. If harm follows an unreported concern, the organisation could face civil liability.
+
+**Recommended action:** The Designated Safeguarding Lead should review all clinically significant notes without a formal flag immediately. Historical concerns requiring escalation should be referred without delay. All 65 carers should complete safeguarding refresher training within 30 days. The care management system should prompt "Does this note indicate a safeguarding concern?" before a note can be submitted.
+
+---
+
+### Insight 10 - Incident Rate of 3.89% is almost double the target, and the trend is flat across 2024 and 2025
+
+**The finding:** The Incident Rate has stayed flat at around 3.89% across both years, while note volumes remain between 3,000 and 4,500 per month.
+
+**Why it matters:** A flat, elevated incident rate means early intervention is not working. The issue identified in Insight 9 is directly related.
+
+**Possible cause:** When note concerns are not escalated, clients do not receive a welfare review or increased monitoring. The issue continues until it becomes serious enough to require an incident report.
+
+**Risk:** Regulators expect incident rates to decline with proactive management. A flat, above-target rate indicates weak quality assurance.
+
+**Recommended action:** Implement a weekly clinical review. A senior care coordinator should assess all visits with clinically significant notes and determine whether each requires a safeguarding referral, care plan review, or increased monitoring.
+
+---
+
+### Insight 11 - Data Quality Score is 69.09%, meaning the organisation cannot fully evidence its own care to a CQC inspector
+
+**The finding:** Carer Notes Completion and Alert Compliance are both around 73%, leaving 30.91% of completed visits with at least one key documentation field missing.
+
+**Why it matters:** During a CQC inspection, the organisation must show records that care was delivered, welfare was monitored, and concerns were acted on. Missing notes mean that evidence does not exist.
+
+**Possible cause:** Documentation burden falls on carers who are already under pressure from short visits and excessive travel. A carer who finishes a visit early to make the next appointment does not have time for thorough notes.
+
+**Risk:** A Data Quality Score of 69.09% exposes the organisation to a CQC finding under Well-Led and reduces its ability to defend itself in regulatory or legal challenges.
+
+**Recommended action:** Introduce structured note templates in the care management system. Drop-down selections for routine visits can reduce documentation time to under 60 seconds. Make documentation completion a team performance indicator in weekly supervision.
+
+---
+
+## Section 4 - Recommendations
+
+### Immediate Actions - Within 30 Days
 
 | #   | Action                                                                                                                                               | Owner                        | Success Measure                                                          |
 | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- | ------------------------------------------------------------------------ |
@@ -322,7 +219,7 @@ Both Carer Notes Completion and Alert Compliance sit at approximately 73%, flat 
 
 ---
 
-### Short-Term Actions — 30–90 Days
+### Short-Term Actions - 30 to 90 Days
 
 | #   | Action                                                                      | Owner                     | Success Measure                                             |
 | --- | --------------------------------------------------------------------------- | ------------------------- | ----------------------------------------------------------- |
@@ -334,7 +231,7 @@ Both Carer Notes Completion and Alert Compliance sit at approximately 73%, flat 
 
 ---
 
-### Long-Term Actions — 90 Days and Beyond
+### Long-Term Actions - 90 Days and Beyond
 
 | #   | Action                                                                                       | Owner                     | Success Measure                                        |
 | --- | -------------------------------------------------------------------------------------------- | ------------------------- | ------------------------------------------------------ |
@@ -345,7 +242,7 @@ Both Carer Notes Completion and Alert Compliance sit at approximately 73%, flat 
 
 ---
 
-## Appendix — KPI Reference Table
+## Appendix - KPI Reference Table
 
 | Metric                  | Result   | Target   | Gap        |
 | ----------------------- | -------- | -------- | ---------- |
@@ -359,7 +256,7 @@ Both Carer Notes Completion and Alert Compliance sit at approximately 73%, flat 
 | Travel Time %           | 37.88%   | ≤ 25%    | +12.88pp   |
 | Avg Travel Time         | 18.0 min | ≤ 15 min | +3.0 min   |
 | Safeguarding Compliance | 48.00%   | ≥ 98%    | -50pp      |
-| Medication Recording    | 100.00%  | ≥ 98%    | ✅ Validate |
+| Medication Recording    | 100.00%  | ≥ 98%    | Validate   |
 | Incident Rate           | 3.89%    | ≤ 2%     | +1.89pp    |
 | Data Quality Score      | 69.09%   | ≥ 95%    | -25.91pp   |
 | Carer Notes Completion  | 73.17%   | ≥ 90%    | -16.83pp   |
@@ -367,4 +264,4 @@ Both Carer Notes Completion and Alert Compliance sit at approximately 73%, flat 
 
 ---
 
-*Analysis based on 75,000 validated care visit records, January 2024 – December 2025. 
+*Analysis based on 75,000 validated care visit records, January 2024 to December 2025.*
