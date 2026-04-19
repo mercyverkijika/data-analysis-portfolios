@@ -19,7 +19,7 @@ Insights and recommendations are provided on the following key areas:
 
 ---
 
-The SQL queries used to load, profile, and clean the data for this analysis can be found **[here](#)**
+The SQL queries used to load, profile, and clean the data for this analysis can be found **[here](./sql)**
 
 ---
 
