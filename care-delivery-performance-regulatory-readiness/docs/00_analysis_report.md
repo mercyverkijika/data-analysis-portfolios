@@ -6,10 +6,6 @@
 
 ---
 
----
-Interactive Dashboard: [View on Power BI Service](#) - explore all findings with live filters, drill-throughs, and area-level breakdowns.
-
----
 
 ## Executive Summary
 
