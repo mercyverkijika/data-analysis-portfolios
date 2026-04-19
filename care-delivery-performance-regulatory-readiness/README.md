@@ -19,11 +19,7 @@ Insights and recommendations are provided on the following key areas:
 
 ---
 
-The SQL queries used to load, profile, and clean the data for this analysis can be found **[here](#)**
-
-Targeted SQL queries addressing specific business questions during the profiling phase can be found **[here](#)**
-
-The interactive Power BI dashboard used to report and explore operational trends can be found **[here](#)**
+The SQL queries used to load, profile, and clean the data for this analysis can be found **[here](./sql)**
 
 ---
 
