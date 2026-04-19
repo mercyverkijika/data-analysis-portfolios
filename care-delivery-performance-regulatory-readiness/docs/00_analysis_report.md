@@ -6,11 +6,6 @@
 
 ---
 
----
-Interactive Dashboard: [View on Power BI Service](#) - explore all findings with live filters, drill-throughs, and area-level breakdowns.
-
----
-
 ## Executive Summary
 
 Everwell Care Services Ltd is not ready for inspection. Across 68,973 accountable visits delivered between January 2024 and December 2025, the organisation achieved a Visit Completion Rate of 57.65% and a Care Delivery Rate of 59.69%. Both are well below the 95% target set by commissioners and the CQC.
