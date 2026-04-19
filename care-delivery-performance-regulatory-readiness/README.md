@@ -58,6 +58,9 @@ Everwell Care Services Ltd is not inspection-ready. Across 68,973 accountable vi
 
 Below is the overview page from power bi dashbaord. other examples are included through out this report. the entire intereactive dashboard can be seen **[here](#)**
 
+<img width="772" height="541" alt="Screenshot 2026-04-19 080102" src="https://github.com/user-attachments/assets/2fd227ae-17fa-4498-83db-3530d8e4fa6f" />
+&nbsp;
+
 The three most important findings are:
 
 > **1.** More than 40% of all accountable visits were either missed entirely (14.80%) or delivered short of the commissioned duration (27.55%), leaving clients routinely without their full care.
@@ -66,6 +69,8 @@ The three most important findings are:
 
 > **3.** Carers are spending 37.88% of their total field time travelling rather than delivering care — a structural scheduling inefficiency driving short visits, late arrivals, and carer overload across all 25 service areas.
 
+<img width="384" height="297" alt="Screenshot 2026-04-19 075240" src="https://github.com/user-attachments/assets/698bb919-3cbf-499f-8cda-e5610da9985d" />
+&nbsp;
 
 *Requires external validation — see Assumptions and Caveats*
 
@@ -85,40 +90,28 @@ The Short Visit Rate of 27.55% — nearly 1 in 3 visits — means carers are rou
 
 **3. Palliative Care is delivering at only 36.29% — a 35 percentage-point gap versus Medication Administration at 71.62%.**
 
-| Care Category             | Delivery Rate |
-| ------------------------- | ------------- |
-| Medication Administration | 71.62%        |
-| Personal Care             | 67.55%        |
-| Dementia Care             | 51.90%        |
-| Companionship / Wellbeing | 51.69%        |
-| **Palliative Care**       | **36.29%**    |
+<img width="966" height="394" alt="Screenshot 2026-04-19 081455" src="https://github.com/user-attachments/assets/f9742290-8f60-47a2-9348-a93b388f7d5f" />
+&nbsp;
 
 Palliative Care accounts for approximately 2,500 under-delivered hours — the joint highest of any category alongside Dementia Care. These clients are approaching end of life with complex, time-sensitive care needs. A delivery rate below 40% for this cohort represents the most serious patient safety risk in the dataset.
 
 **4. The Bedtime/Night Round has the lowest completion rates across every day of the week, reaching as low as 23.46% on Monday nights.**
 
-| Round                     | Monday     | Saturday   | Sunday     |
-| ------------------------- | ---------- | ---------- | ---------- |
-| Morning Round             | 61.94%     | 58.72%     | 59.88%     |
-| Lunchtime Round           | 57.50%     | 54.54%     | 54.90%     |
-| Tea-Time Round            | 60.50%     | 59.83%     | 59.17%     |
-| **Bedtime / Night Round** | **23.46%** | **32.93%** | **46.12%** |
+<img width="926" height="385" alt="Screenshot 2026-04-19 104009" src="https://github.com/user-attachments/assets/6e095c71-3f1a-43e7-895c-e1787ae934f4" />
+&nbsp;
+
+
 
 The Bedtime/Night Round is chronically understaffed. This is the period of highest vulnerability for clients — bedtime medication, comfort positioning, and overnight safety checks are all at risk when completion rates fall below 25%.
+
+<img width="780" height="556" alt="Screenshot 2026-04-19 105255" src="https://github.com/user-attachments/assets/6e5794e4-f306-4e01-86bf-06971ada66aa" />
+&nbsp;
 
 ---
 
 ### Workforce Efficiency
 
 **1. Carers spend 37.88% of field time travelling — 12 percentage points above the ≤25% target.**
-
-| Area      | Care Time | Travel Time |
-| --------- | --------- | ----------- |
-| Bitterne  | 62.73%    | 37.27%      |
-| Hedge End | 61.49%    | 38.51%      |
-| Shirley   | 62.85%    | 37.15%      |
-| Millbrook | 63.30%    | 36.70%      |
-| Bassett   | 63.75%    | 36.25%      |
 
 The uniformity across geographically different areas is the critical signal — this is not a localised routing problem, it is a scheduling architecture problem. Carers are not working within defined geographic zones and are spending approximately 22 minutes of every working hour driving rather than delivering care.
 
@@ -134,21 +127,17 @@ The organisation is scheduling the same volume of visits at weekends (~9,700–8
 
 For the 13,021 Dementia Care visits in the dataset, continuity of carer is not a quality preference — it is a clinical need. An unfamiliar carer visiting a dementia client causes genuine distress and increases the risk of missed welfare observations. Low continuity is a direct consequence of the geographic scheduling failure identified above.
 
+<img width="779" height="558" alt="Screenshot 2026-04-19 105549" src="https://github.com/user-attachments/assets/1e00094a-3bf0-485b-8a4c-bd3544bb28bf" />
+&nbsp;
+
 ---
 
 ### Care Quality & CQC Compliance
 
 **1. Safeguarding Compliance Rate is 48% — 52% of welfare concerns identified in carer notes were never formally escalated.**
 
-| Area                | Safeguarding Compliance |
-| ------------------- | ----------------------- |
-| Hythe               | 37.50%                  |
-| Netley              | 40.91%                  |
-| Hamble              | 42.00%                  |
-| Thornhill           | 42.15%                  |
-| St Denys            | 42.19%                  |
-| Chandlers Ford      | 43.55%                  |
-| **All Areas Total** | **48.00%**              |
+<img width="781" height="365" alt="Screenshot 2026-04-19 110121" src="https://github.com/user-attachments/assets/8bd0c8bb-f851-41b1-96b8-64b2be36e5b5" />
+&nbsp;
 
 The safeguarding compliance trend oscillates between 30% and 50% across the full 24-month period with no improvement. Every visible area performs below 45%. Carer notes containing references to bruising, falls, medication errors, cold homes, and social isolation are being documented but never converted into formal safeguarding referrals. This is a statutory failure under the Care Act 2014.
 
@@ -158,18 +147,14 @@ Visit volumes with carer notes run at 3,000–4,500 per month throughout both ye
 
 **3. The Data Quality Score is 69.09% — documentation gaps exist in approximately 1 in 3 completed visits.**
 
-| Metric                 | Rate    |
-| ---------------------- | ------- |
-| Data Quality Score     | 69.09%  |
-| Carer Notes Completion | 73.17%  |
-| Alert Compliance       | 73.22%  |
-| Mood Recording Rate    | ~89.00% |
-
 Both Carer Notes Completion and Alert Compliance sit at approximately 73%, flat across the entire reporting period. Where notes are absent, the organisation cannot evidence to a CQC inspector that care was delivered, welfare was monitored, or concerns were acted upon.
 
 **4. Medication Recording Rate is 100%, but this requires validation against the source care management system.**
 
 The 100% rate is the single metric meeting its target on the CQC dashboard. However, if the care management system enforces medication entry for visits classified as medication visits, the rate may reflect system logic rather than genuine clinical recording. Until confirmed, this metric should not be used as standalone evidence of compliance in an inspection context.
+
+<img width="780" height="551" alt="Screenshot 2026-04-19 110321" src="https://github.com/user-attachments/assets/d1224105-8b0e-49b7-ab57-28ced7bf14e2" />
+&nbsp;
 
 ---
 
@@ -177,40 +162,16 @@ The 100% rate is the single metric meeting its target on the CQC dashboard. Howe
 
 **1. The cost variance between planned and actual labour is -£129,514, representing care commissioned but not delivered.**
 
-|                     | Amount        |
-| ------------------- | ------------- |
-| Planned Labour Cost | £481,737      |
-| Actual Labour Cost  | £352,223      |
-| **Cost Variance**   | **-£129,514** |
-
 This is not a saving — it is undelivered care that was commissioned and expected by clients and commissioners. The gap reflects the financial consequence of 14.80% missed visits and 27.55% short visits combined.
 
 **2. Approximately 4,100 missed visits (~40% of all missed visits) have no documented reason.**
 
-| Reason             | Count  |
-| ------------------ | ------ |
-| No reason provided | ~4,100 |
-| Carer sickness     | ~1,700 |
-| Vehicle breakdown  | ~900   |
-| No carer available | ~900   |
-| Traffic delay      | ~900   |
-| Carer running late | ~900   |
-| Weather conditions | ~900   |
+<img width="707" height="287" alt="Screenshot 2026-04-19 111158" src="https://github.com/user-attachments/assets/bb37548a-481e-4146-9eab-636d648f1784" />
+&nbsp;
 
 Without a documented reason, the organisation cannot distinguish preventable workforce failures from uncontrollable external events, cannot build an evidence-based improvement plan, and cannot respond credibly to commissioner or CQC enquiries.
 
 **3. All 25 service areas show completion rates between 54.4% and 64.9% — no area is meeting the 95% target.**
-
-| Area           | Care Delivery Rate |
-| -------------- | ------------------ |
-| Swaythling     | 58.81%             |
-| West End       | 58.35%             |
-| Shirley        | 57.59%             |
-| Chandlers Ford | 57.06%             |
-| Fair Oak       | 56.92%             |
-| Millbrook      | 56.91%             |
-| Ocean Village  | 56.07%             |
-| Netley         | 55.00%             |
 
 The narrow 10 percentage-point band across areas confirms this is a system-wide failure. There is no internal best-practice area from which to draw lessons — the improvement must come from structural change at the organisational level.
 
