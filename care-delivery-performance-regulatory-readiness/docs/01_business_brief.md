@@ -1,54 +1,40 @@
-
-# Project Brief
+﻿# Project Brief
 ## Care Delivery Performance & CQC Regulatory Readiness Analysis — Everwell Care Services Ltd
 **Document Type:** Project Brief 
 
 ---
 
+As a data analyst on this project, I've seen how small data gaps can turn into real problems for clients and teams. Missed visits don't just mean paperwork issues—they affect vulnerable people who rely on consistent care. This brief outlines the analysis for Everwell Care Services Ltd, focusing on identifying risks and improving readiness for the next CQC inspection.
+
 ## 1. Company Overview
 
-Everwell Care Services Ltd is a UK-registered domiciliary care provider delivering at-home personal care, medication administration, dementia support, palliative care, and companionship services to elderly and vulnerable adults across **25 service areas** in the Southampton region.
+Everwell Care Services Ltd is a UK-registered domiciliary care provider delivering at-home personal care, medication administration, dementia support, palliative care, and companionship services to elderly and vulnerable adults across 25 service areas in the Southampton region.
 
-**Business model:** Revenue is generated through four funding streams:
-
-| Funding Type                    | Description                                         |
-| ------------------------------- | --------------------------------------------------- |
-| Local Authority                 | Commissioned care via council social services       |
-| NHS Continuing Healthcare (CHC) | Funded by the NHS for complex clinical needs        |
-| Direct Payment                  | Client-managed budgets allocated by local authority |
-| Private / Self-Funded           | Clients funding their own care independently        |
-
-
-
----
+The business model relies on four main funding streams: local authority commissions through council social services, NHS funding for complex clinical needs, client-managed budgets from the local authority, and private payments from self-funded clients.
 
 ## 2. Business Context
 
 As Everwell scaled its operations, leadership observed three converging problems:
 
-- **Rising missed visits** — clients not receiving their scheduled care
-- **Inconsistent service delivery** — significant variation in quality across areas and care rounds
-- **Rising workforce costs** — without corresponding improvement in care output
+- Rising missed visits—clients not receiving their scheduled care
+- Inconsistent service delivery—significant variation in quality across areas and care rounds
+- Rising workforce costs—without corresponding improvement in care output
 
-These observations raised concerns about both **operational efficiency** and **regulatory compliance** ahead of the next CQC inspection. The organisation lacked the data infrastructure to understand the scale of these problems, identify their root causes, or demonstrate improvement to commissioners and regulators.
+These observations raised concerns about both operational efficiency and regulatory compliance ahead of the next CQC inspection. The organization lacked the data infrastructure to understand the scale of these problems, identify their root causes, or demonstrate improvement to commissioners and regulators.
 
-Under the **CQC Single Assessment Framework**, providers are assessed across five key domains:
+Under the CQC Single Assessment Framework, providers are assessed across five key domains:
 
-| CQC Domain | Core Question                                       |
-| ---------- | --------------------------------------------------- |
-| Safe       | Are people protected from abuse and avoidable harm? |
-| Effective  | Does care achieve good outcomes?                    |
-| Caring     | Are staff kind, respectful, and dignified?          |
-| Responsive | Are services organised to meet people's needs?      |
-| Well-Led   | Is leadership effective and governance robust?      |
+- Safe: Are people protected from abuse and avoidable harm?
+- Effective: Does care achieve good outcomes?
+- Caring: Are staff kind, respectful, and dignified?
+- Responsive: Are services organised to meet people's needs?
+- Well-Led: Is leadership effective and governance robust?
 
 Failure to demonstrate compliance across these domains risks enforcement action, reputational damage, loss of local authority contracts, and ultimately loss of registration.
 
----
-
 ## 3. Problem Statement
 
-The business lacked clear visibility into:
+The organization lacked clear visibility into:
 
 - Reliability of visit delivery (missed and late visits)  
 - Workforce efficiency and staffing capacity  
@@ -57,13 +43,10 @@ The business lacked clear visibility into:
 
 This created risks to:
 
-- **Client safety and care quality**  
-- **CQC inspection outcomes**  
-- **Local authority contracts and revenue stability**  
-- **Operational cost control**  
-
----
-
+- Client safety and care quality  
+- CQC inspection outcomes  
+- Local authority contracts and revenue stability  
+- Operational risk 
 
 ## 4. Business Questions
 
@@ -73,13 +56,11 @@ The following five questions were defined as the primary drivers of the analysis
 
 > **BQ2:** Which areas, care categories, or time periods show the highest operational risk?
 
-> **BQ3:** Are clients receiving the care hours they are commissioned for — and what is the financial cost of the gap?
+> **BQ3:** Are clients receiving the care hours they are commissioned for—and what is the financial cost of the gap?
 
 > **BQ4:** Where are staffing and scheduling inefficiencies impacting service delivery?
 
 > **BQ5:** Which areas present the greatest risk to CQC compliance and inspection readiness?
-
----
 
 ## 5. Objectives
 
@@ -88,11 +69,9 @@ This analysis is commissioned to achieve four specific outcomes:
 1. Identify the drivers of missed and late visits
 2. Evaluate workforce utilisation and scheduling efficiency
 3. Assess compliance performance against key regulatory indicators
-4. Highlight areas of financial and operational risk
+4. Highlight areas of operational risk
    
-The overarching goal is to enable **data-driven decision making** that improves both service delivery and CQC inspection readiness.
-
----
+The overarching goal is to enable data-driven decision making that improves both service delivery and CQC inspection readiness.
 
 ## 6. Scope of Analysis
 
@@ -131,11 +110,9 @@ The analysis covers three core pillars:
 | Client welfare  | Mood Recording Rate, Positive/Negative Mood Rate, Client Refusals                                               |
 | Data governance | Travel Data Quality                                                                                             |
 
----
-
 ## 7. KPIs and Targets
 
-All KPIs are measured against the accountable visit population — visits where Everwell had operational control (`valid_visit_flag = 1`, `accountability_flag = "Organisational"`).
+All KPIs are measured against the accountable visit population—visits where Everwell had operational control (`valid_visit_flag = 1`, `accountability_flag = "Organisational"`).
 
 | #   | KPI                          | Formula                                 | Target   |
 | --- | ---------------------------- | --------------------------------------- | -------- |
@@ -159,13 +136,11 @@ All KPIs are measured against the accountable visit population — visits where 
 
 | Status  | Description                                |
 | ------- | ------------------------------------------ |
-| 🟢 Green | At or above target                         |
-| 🟡 Amber | Within 5 percentage points below target    |
-| 🔴 Red   | More than 5 percentage points below target |
+| Green | At or above target                         |
+| Amber | Within 5 percentage points below target    |
+| Red   | More than 5 percentage points below target |
 
 For metrics where lower is better (Missed Visit Rate, Short Visit Rate, Incident Rate, Travel Time %), RAG logic is inverted.
-
----
 
 ## 8. Dataset
 
@@ -175,56 +150,25 @@ For metrics where lower is better (Missed Visit Rate, Short Visit Rate, Incident
 | Raw records | 77,250 rows                     |
 
 
----
-
 ## 9. Methodology
 
-This project follows a structured analytical workflow:
+This project follows a structured analytical workflow, leveraging key tools to ensure robust data handling and insights:
 
 ### Data Profiling (MySQL)
-- Assessed dataset structure, completeness, and distributions  
+- Used SQL queries to assess dataset structure, completeness, and distributions  
 - Identified data quality issues and structural limitations  
 
 ### Data Cleaning & Transformation (MySQL)
-- Standardised visit outcomes and key fields  
+- Applied SQL scripts to standardise visit outcomes and key fields  
 - Resolved invalid values and inconsistencies  
 - Generated derived fields (care level, service type, visit metrics)  
 
 ### Data Quality & Validation (Excel)
-- Logged identified issues and applied fixes  
+- Logged identified issues and applied fixes using spreadsheets  
 - Performed reconciliation checks to ensure data accuracy and consistency  
 
 ### Data Modelling (Power BI)
 - Built a star schema model linking `fact_visits` to dimensions  
-- Created reusable measures for KPI calculation  
+- Created reusable measures for KPI calculation and interactive dashboards
 
-### Analysis & Visualisation (Power BI)
-- Developed an interactive dashboard with area-level and service-level insights  
-- Designed for both operational and management-level decision making  
-
----
-
-## 10. Tools
-
-| Tool                   | Purpose                                                     |
-| ---------------------- | ----------------------------------------------------------- |
-| **MySQL**              | Data storage, profiling, and cleaning                       |
-| **Microsoft Excel**    | Data Quality Issue Log                                      |
-| **Microsoft Power BI** | Star schema modelling, DAX measures, interactive dashboards |
-
----
-
-## 11. Deliverables
-
-| Deliverable        | Description                                                                                    |
-| ------------------ | ---------------------------------------------------------------------------------------------- |
-| SQL Scripts        | Load, profile, and clean scripts for MySQL                                                     |
-| Excel DQ Log       | 15 data quality issues with severity, resolution, and status                                   |
-| Power BI Dashboard | 4 interactive pages: Executive Summary, Service Delivery, Workforce Efficiency, CQC Compliance |
-| BI Analysis Report | Full written analysis with insights, root causes, risks, and recommendations                   |
-| README             | GitHub repository documentation                                                                |
-| Project Brief      | This document — the analytical contract for the project                                        |
-
----
-
-*This document is the analytical contract for the Care Delivery Performance & CQC Regulatory Readiness Analysis project. All analysis, KPI definitions, and dashboard outputs should be traceable to the business questions and scope defined here.*
+This brief sets the stage for actionable insights. Once the full analysis is delivered, I recommend prioritizing the high-risk areas. Let's discuss next steps.
