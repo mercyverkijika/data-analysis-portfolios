@@ -240,23 +240,23 @@ Before presenting these findings externally, note the following:
 
 ## Appendix - KPI Reference Table
 
-| Metric                  | Result   | Target   | Gap        |
-| ----------------------- | -------- | -------- | ---------- |
-| Visit Completion Rate   | 57.65%   | ≥ 95%    | -37.35pp   |
-| Care Delivery Rate      | 59.69%   | ≥ 95%    | -35.31pp   |
-| Missed Visit Rate       | 14.80%   | ≤ 2%     | +12.80pp   |
-| Short Visit Rate        | 27.55%   | ≤ 3%     | +24.55pp   |
-| Punctuality Rate        | 68.78%   | ≥ 90%    | -21.22pp   |
-| Utilisation Rate        | 62.12%   | ≥ 90%    | -27.88pp   |
-| Continuity Rate         | 68.5%    | ≥ 95%    | -26.5pp    |
-| Travel Time %           | 37.88%   | ≤ 25%    | +12.88pp   |
-| Avg Travel Time         | 18.0 min | ≤ 15 min | +3.0 min   |
-| Safeguarding Compliance | 48.00%   | ≥ 98%    | -50pp      |
-| Medication Recording    | 100.00%  | ≥ 98%    | Validate   |
-| Incident Rate           | 3.89%    | ≤ 2%     | +1.89pp    |
-| Data Quality Score      | 69.09%   | ≥ 95%    | -25.91pp   |
-| Carer Notes Completion  | 73.17%   | ≥ 90%    | -16.83pp   |
-| Alert Compliance        | 73.22%   | ≥ 90%    | -16.78pp   |
+| Metric                  | Result   | Target   | Gap      |
+| ----------------------- | -------- | -------- | -------- |
+| Visit Completion Rate   | 57.65%   | ≥ 95%    | -37.35pp |
+| Care Delivery Rate      | 59.69%   | ≥ 95%    | -35.31pp |
+| Missed Visit Rate       | 14.80%   | ≤ 2%     | +12.80pp |
+| Short Visit Rate        | 27.55%   | ≤ 3%     | +24.55pp |
+| Punctuality Rate        | 68.78%   | ≥ 90%    | -21.22pp |
+| Utilisation Rate        | 62.12%   | ≥ 90%    | -27.88pp |
+| Continuity Rate         | 68.5%    | ≥ 95%    | -26.5pp  |
+| Travel Time %           | 37.88%   | ≤ 25%    | +12.88pp |
+| Avg Travel Time         | 18.0 min | ≤ 15 min | +3.0 min |
+| Safeguarding Compliance | 48.00%   | ≥ 98%    | -50pp    |
+| Medication Recording    | 100.00%  | ≥ 98%    | Validate |
+| Incident Rate           | 3.89%    | ≤ 2%     | +1.89pp  |
+| Data Quality Score      | 69.09%   | ≥ 95%    | -25.91pp |
+| Carer Notes Completion  | 73.17%   | ≥ 90%    | -16.83pp |
+| Alert Compliance        | 73.22%   | ≥ 90%    | -16.78pp |
 
 ---
 
