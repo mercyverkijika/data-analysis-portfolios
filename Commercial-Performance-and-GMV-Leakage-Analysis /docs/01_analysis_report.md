@@ -5,21 +5,22 @@
 
 **Document Type:** Portfolio BI Analysis Report
 
+
 ---
 
 ## Important Notice
 
-This analysis uses the publicly available **Olist Brazilian E-Commerce Public Dataset** sourced from Kaggle. The dataset is provided as **nine separate CSV files** covering orders, customers, sellers, products, order items, payments, reviews, geolocation, and product category translation.
+This analysis uses the publicly available Olist Brazilian E-Commerce Public Dataset sourced from Kaggle. The dataset is provided as nine separate CSV files covering orders, customers, sellers, products, order items, payments, reviews, geolocation, and product category translation.
 
 Nexora Commerce Ltd, the business context, and stakeholder roles have been fictionalised to simulate a real-world commercial analytics engagement. All analytical findings, KPI definitions, dashboard outputs, and recommendations are original work.
 
-All revenue-related metrics in this report are expressed as **Gross Merchandise Value (GMV)**, not net platform revenue. The Olist dataset does not include seller commission rates, marketplace fee structures, or seller payout data. Therefore, Nexora’s actual net revenue cannot be calculated from the available data.
+All revenue-related metrics in this report are expressed as Gross Merchandise Value (GMV), not net platform revenue. The Olist dataset does not include seller commission rates, marketplace fee structures, or seller payout data. Nexora's actual net revenue cannot be calculated from the available data.
 
 ---
 
 ## Executive Summary
 
-Nexora Commerce Ltd generated R$15.42M in Gross Merchandise Value across 96,478 delivered orders between October 2016 and August 2018, against a CCO target of R$18.0M. The R$2.58M shortfall is not driven by a severe basket-size problem alone. Average Order Value is R$159.8, broadly in line with the R$160 benchmark but slightly below target. The larger constraint is commercial efficiency: the platform acquires customers at cost and recovers that cost exactly once, because 97.1% of customers never place a second order.
+Nexora Commerce Ltd generated R$15.42M in Gross Merchandise Value across 96,478 delivered orders between October 2016 and August 2018, against a CCO target of R$18.0M. The R$2.58M shortfall is not driven by basket size alone. Average Order Value is R$159.8, broadly in line with the R$160 benchmark but slightly below target. The larger constraint is commercial efficiency: the platform acquires customers at cost and recovers that cost exactly once, because 97.1% of customers never place a second order.
 
 Five findings define the commercial position:
 
@@ -38,12 +39,12 @@ Five findings define the commercial position:
 | Customer Retention Rate | 2.9% | 15% | Red |
 | Late Delivery Rate | 6.8% | <= 5% | Amber |
 | Average Review Score | 4.08 / 5.0 | 4.5 / 5.0 | Red |
-| Avg Review Score — Late Orders | 2.27 / 5.0 | 4.5 / 5.0 | Red |
-| Avg Review Score — On-Time Orders | 4.29 / 5.0 | 4.5 / 5.0 | Amber |
+| Avg Review Score (Late Orders) | 2.27 / 5.0 | 4.5 / 5.0 | Red |
+| Avg Review Score (On-Time Orders) | 4.29 / 5.0 | 4.5 / 5.0 | Amber |
 | Freight Cost Ratio | 14.3% | <= 15% | Green |
 | Average Freight per Order | R$22.79 | <= R$20 | Amber |
 | GMV Leakage Rate | 0.6% | <= 1% | Signal |
-| High-Risk Sellers | 577 | ≤10% of sellers | Red |
+| High-Risk Seller Share | 18.6% of sellers | <= 10% | Red |
 
 *See Appendix for full KPI reference table with actuals, targets, and gaps.*
 
@@ -51,7 +52,7 @@ Five findings define the commercial position:
 
 ## Business Context and Objectives
 
-Nexora Commerce Ltd is a Brazilian e-commerce marketplace that operated between October 2016 and August 2018. The platform connects independent sellers to end consumers across Brazil, acting as an intermediary that facilitates product listing, payment processing, order fulfilment coordination, and customer service. In a real marketplace model, Nexora would generate net revenue through seller commission fees, marketplace service charges, and payment-related fees applied to completed transactions. However, because the source dataset does not include commission rates, fee structures, or seller payout data, this analysis evaluates commercial performance using GMV rather than net platform revenue.
+Nexora Commerce Ltd is a Brazilian e-commerce marketplace that operated between October 2016 and August 2018. The platform connects independent sellers to end consumers across Brazil, acting as an intermediary that facilitates product listing, payment processing, order fulfilment coordination, and customer service. Nexora generates revenue through seller commission fees and marketplace service charges applied to each completed transaction.
 
 **Key operational facts**
 
@@ -70,13 +71,13 @@ The platform operates in Brazil's rapidly growing e-commerce sector, competing a
 
 **Threat 1: Near-zero customer retention.** Preliminary data indicated the overwhelming majority of customers place a single order and never return. In an e-commerce marketplace, customer acquisition cost is only recovered through repeat purchases. A platform that cannot convert first-time buyers into returning customers is filling a leaking bucket from the top while losing value from the bottom.
 
-**Threat 2: Unquantified GMV leakage and commercial inefficiency.** The business lacked clear visibility into the gap between GMV it attempted to process and GMV successfully converted into delivered transactions. Cancelled orders, unavailable products, high freight costs relative to product value, and underperforming seller and category segments all represent areas where commercial value is lost, weakened, or placed at risk.
+**Threat 2: Unquantified revenue leakage.** The business lacked clear visibility into the gap between the revenue it should be generating and the revenue it was actually collecting. Cancelled orders, unavailable products, high freight costs relative to purchase value, and underperforming seller and category segments all represent revenue the platform is entitled to but is not capturing.
 
 The Chief Commercial Officer commissioned this analysis to quantify both threats with precision, identify their root causes, and provide a clear commercial roadmap for recovery.
 
 **Business Questions**
 
-> **BQ1:** How much GMV is Nexora generating versus its commercial target, and where specifically is the gap coming from?
+> **BQ1:** How much revenue is Nexora generating versus how much should it be generating, and where specifically is the gap coming from?
 
 > **BQ2:** Which product categories, sellers, and regions are driving commercial value, and which are creating GMV leakage, freight pressure, or customer experience risk?
 
@@ -94,7 +95,7 @@ The report is organised into five dashboard-aligned sections, each addressing on
 
 **Section 1: Executive Commercial Health**
 
-This section synthesises the platform's overall commercial position, connecting GMV performance to retention and fulfilment risk. It addresses BQ1. Note: this is a summary layer rather than a standalone analytical pillar — its findings are drawn from the four sections below.
+This section synthesises the platform's overall commercial position, connecting GMV performance to retention and fulfilment risk. It addresses BQ1. Note: this is a summary layer rather than a standalone analytical pillar; its findings are drawn from the four sections below.
 
 **Section 2: Revenue Performance and GMV Leakage**
 
@@ -143,25 +144,25 @@ This section tiers the seller base by commercial value and risk, quantifies reve
 
 ## KPI Framework
 
-All GMV-related KPIs are calculated in Brazilian Reais (R$). KPI denominators vary by metric and are specified in the formula column. Revenue-related metrics are reported as GMV rather than net platform revenue because commission rates and seller payout data are not available in the source dataset.
+All revenue KPIs are calculated in Brazilian Reais (R$). All rate KPIs are calculated as a percentage of total delivered orders unless otherwise specified.
 
 | # | KPI | Formula | Target |
 |---|---|---|---|
 | 1 | Total GMV | SUM(item_price + freight_value) for delivered orders. Represents Gross Merchandise Value, not Nexora net revenue. | R$18.0M |
 | 2 | Average Order Value | Total GMV / Total Delivered Orders | > R$160 |
-| 3 | Customer Retention Rate | Customers with 2+ delivered orders / Customers with at least 1 delivered order | >= 15% |
+| 3 | Customer Retention Rate | Customers with 2+ orders / Customers with at least 1 delivered order | >= 15% |
 | 4 | First-to-Second Purchase Rate | Customers who placed order 2 / Customers who placed order 1 | >= 25% |
-| 5 | On-Time Delivery Rate | Orders delivered on or before estimated date / Total Delivered Orders | >= 95% |
-| 6 | Late Delivery Rate | Orders delivered after estimated date / Total Delivered Orders | <= 5% |
-| 7 | Average Review Score | Average review score for reviewed delivered orders | >= 4.5 |
+| 5 | On-Time Delivery Rate | Orders delivered on or before estimated date / Total Delivered | >= 95% |
+| 6 | Late Delivery Rate | Orders delivered after estimated date / Total Delivered | <= 5% |
+| 7 | Average Review Score | AVERAGE(review_score) for delivered orders | >= 4.5 |
 | 8 | Negative Review Rate | Orders with score 1 or 2 / Total Reviewed Orders | <= 5% |
-| 9 | Freight Cost Ratio | Total Freight Value / Total GMV | <= 15% |
-| 10 | Average Freight per Order | Total Freight Value / Delivered Orders | <= R$20 |
-| 11 | GMV Leakage Rate | Leakage product value / Total GMV including leakage | <= 1%, monitored as signal |
+| 9 | Freight Cost Ratio | Total Freight / Total GMV | <= 15% |
+| 10 | Average Freight per Order | Total Freight / Total Orders | <= R$20 |
+| 11 | GMV Leakage Rate | Leakage Revenue / Total GMV | <= 1% |
 | 12 | Revenue Concentration | Top-Tier Seller GMV / Total Seller GMV | Monitor |
 | 13 | High-Risk Seller Share | High-risk sellers / Registered sellers | <= 10% |
 | 14 | Cancellation Rate | Cancelled Orders / Total Orders | <= 2% |
-| 15 | Revenue per Customer | Total GMV / Customers with at least 1 delivered order | >= R$250 |
+| 15 | Revenue per Customer | Total GMV / Unique Customers (with delivered orders) | >= R$250 |
 
 **RAG Thresholds**
 
@@ -177,7 +178,7 @@ For metrics where lower is better (Late Delivery Rate, Freight Cost Ratio, Cance
 
 ## Dataset Source and Integration
 
-The analysis was built from the original **Olist Brazilian E-Commerce Public Dataset**, which is provided as nine CSV files. These files represent different marketplace entities and transaction processes.
+The analysis was built from the original Olist Brazilian E-Commerce Public Dataset, provided as nine CSV files representing different marketplace entities and transaction processes.
 
 | CSV File | Business Entity / Purpose |
 |---|---|
@@ -191,9 +192,23 @@ The analysis was built from the original **Olist Brazilian E-Commerce Public Dat
 | `olist_geolocation_dataset.csv` | Zip-code-level geographic coordinates and location details |
 | `product_category_name_translation.csv` | Portuguese-to-English product category translation lookup |
 
-The core analytical grain is **order item level**, using `olist_order_items_dataset.csv` as the main transaction fact source. This means a single order can appear multiple times if it contains multiple items. Order-level KPIs such as delivered orders, late orders, cancellation rate, and customer retention were therefore calculated using distinct order and customer counts to avoid duplication.
+The core analytical grain is order item level, using `olist_order_items_dataset.csv` as the main transaction fact source. This means a single order can appear multiple times if it contains multiple items. Order-level KPIs such as delivered orders, late orders, cancellation rate, and customer retention were calculated using distinct order and customer counts to avoid duplication.
 
 The source files were loaded, profiled, cleaned, and joined in MySQL before being transformed into an analysis-ready model for Power BI.
+
+---
+
+## Dashboard Deliverable
+
+The Power BI dashboard contains five stakeholder-facing pages aligned to the business questions and analytical sections in this report.
+
+| Dashboard Page | Purpose |
+|---|---|
+| Executive Summary: Commercial Health and Revenue Risk | Summarises GMV performance, retention risk, late delivery, review score, and leakage exposure |
+| Revenue Performance and GMV Leakage Drivers | Explains GMV leakage, freight burden, and category-level commercial efficiency |
+| Customer Retention and Lifetime Value | Analyses one-time customers, repeat customers, return timing, and customer value |
+| Delivery Experience and Customer Satisfaction | Connects delivery performance to review scores and repeat purchase behaviour |
+| Seller Portfolio and Commercial Risk | Segments sellers by value, delivery risk, review performance, and intervention priority |
 
 ---
 
@@ -224,39 +239,19 @@ This project follows the CRISP-DM framework across six phases.
 
 **Data and Calculation Notes**
 
-The analysis is based on the original nine-file Olist dataset. The transaction model is built primarily from orders, order items, customers, products, sellers, reviews, and category translation data.
+All KPIs are calculated against 96,478 delivered orders where order_status = delivered. Seven cancelled orders are included in the cancellation rate calculation only and excluded from all revenue and performance metrics.
 
-All KPIs are calculated against **96,478 validated delivered orders** where `order_status = "delivered"`, unless otherwise stated.
+All revenue figures in this report represent Gross Merchandise Value (GMV): the total value of transactions processed through the platform (item_price + freight_value for delivered orders). The Olist public dataset does not include seller commission rates or net payout data. Nexora's actual platform revenue would be GMV multiplied by the applicable commission rate per transaction, which is not available in the dataset.
 
-The source order item table is at item grain. A single order can contain multiple item rows, so order-level KPIs use `DISTINCTCOUNT(order_id)` to avoid inflation.
+The GMV leakage rate is calculated as leakage revenue divided by total GMV including leakage. Leakage revenue is SUM(item_price) for cancelled and unavailable orders, treating freight as a pass-through cost excluded from the leakage calculation.
 
-All revenue figures in this report represent **Gross Merchandise Value (GMV)**: the total value of transactions processed through the platform. For delivered orders, Total GMV is calculated as `item_price + freight_value`. The dataset does not include commission rates, marketplace fee structures, or seller payout data, so Nexora’s actual net revenue cannot be calculated.
+The retention denominator is 93,358, which is the count of customers with at least one delivered order. This is the correct commercial denominator: a customer with no delivered orders had no transactional experience from which to return. The headline customer count of 96,096 represents all distinct customers in the dimension table across all order statuses.
 
-The GMV leakage rate is calculated as leakage product value divided by total GMV including leakage. Leakage value uses `item_price` from cancelled and unavailable orders. Freight is excluded from leakage value because it is treated as a pass-through customer-paid value rather than Nexora’s net revenue.
+Customer retention analysis splits returning customers into: customers with exactly two orders (2,573), exactly three orders (181), and four or more orders (47). The balance, 90,557, placed exactly one order and did not return.
 
-The retention denominator is **93,358**, representing customers with at least one delivered order. This is the commercial retention denominator because customers whose orders were never delivered had no completed transaction experience from which to return. The broader registered customer count is **96,096**.
+Review scores are not available for all delivered orders. Review-based KPIs are calculated against reviewed orders only and are clearly labelled on all dashboard visuals.
 
-Customer retention analysis splits returning customers into: customers with exactly two orders, exactly three orders, and four or more orders. Customers with exactly one delivered order are classified as one-time customers.
-
-Review scores are not available for all delivered orders. Review-based KPIs are calculated against reviewed delivered orders only and are labelled as such in the dashboard.
-
-Customer retention is measured using `customer_unique_id`, the stable cross-order customer identifier. The customer dimension was rebuilt during data preparation to enforce one row per `customer_unique_id` after duplicate customer records were identified.
-
-The geolocation file contains multiple rows per zip code prefix. Where geolocation data is used, it must be aggregated before being used as a stable geographic lookup to avoid record duplication.
-
----
-
-## Dashboard Deliverable
-
-The Power BI dashboard contains five stakeholder-facing pages aligned to the business questions and analytical sections in this report.
-
-| Dashboard Page | Purpose |
-|---|---|
-| Executive Summary — Commercial Health & Revenue Risk | Summarises GMV performance, retention risk, late delivery, review score, and leakage exposure |
-| Revenue Performance & GMV Leakage Drivers | Explains GMV leakage, freight burden, and category-level commercial efficiency |
-| Customer Retention & Lifetime Value | Analyses one-time customers, repeat customers, return timing, and customer value |
-| Delivery Experience & Customer Satisfaction | Connects delivery performance to review scores and repeat purchase behaviour |
-| Seller Portfolio & Commercial Risk | Segments sellers by value, delivery risk, review performance, and intervention priority |
+Customer retention is measured using customer_unique_id, the stable cross-order customer identifier. The dim_customer table was rebuilt during data preparation to resolve 122 duplicate rows caused by customers ordering from multiple states, using GROUP BY on customer_unique_id to enforce one row per customer.
 
 ---
 
@@ -272,7 +267,7 @@ The Power BI dashboard contains five stakeholder-facing pages aligned to the bus
 
 **Finding:** Nexora generated strong marketplace activity across the operating period, but growth is not translating into sustainable customer value. The platform is producing transaction volume without the retention infrastructure to compound it.
 
-**Evidence:** Total GMV reached R$15.42M against an R$18.0M target, a shortfall of R$2.58M. Customer retention is 2.9%, late delivery is 6.8%, and GMV leakage is R$97.24K. Average Order Value is R$159.8, broadly in line with the R$160 benchmark but slightly below target, confirming that the commercial problem is not driven by basket size alone. The larger issue is frequency and retention.
+**Evidence:** Total GMV reached R$15.42M against an R$18.0M target, a shortfall of R$2.58M. Customer retention is 2.9%, late delivery is 6.8%, and GMV leakage is R$97.24K. Average Order Value of R$172 is above the R$160 benchmark, confirming that the commercial problem is not low basket size. It is frequency and retention.
 
 **Business Impact:** The platform is acquiring customers, processing their first order, and then losing them. With 97.1% of customers making only one purchase, Nexora is operating as a one-time transaction engine rather than a marketplace that builds compounding customer value. Every incremental investment in acquisition produces exactly one order before the relationship ends.
 
@@ -352,7 +347,7 @@ The Power BI dashboard contains five stakeholder-facing pages aligned to the bus
 
 **Finding:** Repeat customers represent a very small share of the customer base but generate a measurably larger share of platform GMV, confirming that retention investment has better unit economics than equivalent acquisition spend.
 
-**Evidence:** Repeat customers account for 2.9% of customers with delivered orders but generate 4.7% of platform GMV — a 1.6x CLV ratio achieved with zero retention infrastructure in place. The ratio of GMV contribution to customer share demonstrates that returning customers place higher-value orders, purchase more frequently, and compound commercial output in ways that single-purchase customers structurally cannot.
+**Evidence:** Repeat customers account for 2.9% of customers with delivered orders but generate 4.7% of platform GMV, a 1.6x CLV ratio achieved with zero retention infrastructure in place. The ratio of GMV contribution to customer share demonstrates that returning customers place higher-value orders, purchase more frequently, and compound commercial output in ways that single-purchase customers structurally cannot.
 
 **Business Impact:** At this CLV ratio, every percentage point improvement in retention delivers a greater than proportional lift in GMV. The platform does not need to double its customer base to materially improve revenue. It needs to convert a fraction of the 90,557 one-time customers into returning buyers. The commercial return on retention investment is demonstrably higher than the return on equivalent acquisition spend at current performance levels.
 
@@ -404,7 +399,7 @@ The Power BI dashboard contains five stakeholder-facing pages aligned to the bus
 
 **Finding:** Customers whose first order was delivered late are substantially less likely to place a second order. First-order delivery experience is the strongest predictor of retention in the dataset.
 
-**Evidence:** Retention rate after an on-time first delivery is 2.9%. Retention rate after a late first delivery is 0.5% — an 83% lower repeat rate among the late-delivery cohort. This is an observed association from the dataset; controlled analysis would be required to establish causality. The directional signal is nonetheless strong and commercially significant: a poor first delivery experience is associated with near-complete loss of the customer relationship in a marketplace where 97% of customers were already not returning after even a good experience.
+**Evidence:** Retention rate after an on-time first delivery is 2.9%. Retention rate after a late first delivery is 0.5%, which is 83% lower among the late-delivery cohort. This is an observed association from the dataset; controlled analysis would be required to establish causality. The directional signal is nonetheless strong and commercially significant: a poor first delivery experience is associated with near-complete loss of the customer relationship in a marketplace where 97% of customers were already not returning after even a good experience.
 
 **Business Impact:** The platform's 6.8% late rate is not randomly distributed across all customer relationships. It falls disproportionately on first-time customers whose entire perception of Nexora is shaped by that single order. Improving delivery reliability for new customers specifically would have a greater impact on retention than an equivalent improvement across the full customer base.
 
@@ -444,7 +439,7 @@ The Power BI dashboard contains five stakeholder-facing pages aligned to the bus
 
 **Finding:** A small group of sellers contributes the overwhelming majority of commercial value. This concentration is a structural risk that the platform currently has no framework to monitor or protect against.
 
-**Evidence:** The highest-performing 4.98% of sellers — roughly 150 sellers — account for approximately 54% of total seller GMV. In Lorenz curve terms, the platform's seller base is operating well inside the inequality boundary expected even from a healthy two-sided marketplace. The average GMV across all 3,025 active sellers is approximately R$5,100, but this figure is heavily distorted by the long tail of low-volume sellers. The majority of sellers generate marginal revenue relative to their presence on the platform.
+**Evidence:** The highest-performing 4.98% of sellers (roughly 150 sellers) account for approximately 54% of total seller GMV. In Lorenz curve terms, the platform's seller base is operating well inside the inequality boundary expected even from a healthy two-sided marketplace. The average GMV across all 3,025 active sellers is approximately R$5,100, but this figure is heavily distorted by the long tail of low-volume sellers. The majority of sellers generate marginal revenue relative to their presence on the platform.
 
 **Business Impact:** If a disproportionate share of top-tier sellers reduces their activity, moves catalogue to a competing marketplace, or exits the platform, the GMV impact is not proportional to their headcount. The platform has no early warning mechanism for this risk. There is no account management, no commercial relationship programme, and no monitoring system that would flag a high-value seller beginning to disengage before the revenue impact appears in monthly GMV figures.
 
@@ -471,7 +466,7 @@ The Power BI dashboard contains five stakeholder-facing pages aligned to the bus
 | # | Action | Owner | Success Measure |
 |---|---|---|---|
 | 1 | Assign commercial account managers to all top-tier sellers. Establish quarterly review cadence for each relationship | Commercial Director | Top-tier sellers contacted and reviewed within 30 days |
-| 2 | Issue performance improvement notices to all 577 high-risk sellers, with 60-day targets and defined escalation consequences. Late delivery is associated with retention falling from 2.9% to 0.5% and review scores from 4.29 to 2.27 — this cohort is the primary driver | Seller Operations | 100% of high-risk sellers contacted within 30 days; 60-day improvement plans in place for all High Value / High Risk sellers |
+| 2 | Issue performance improvement notices to all 577 high-risk sellers, with 60-day targets and defined escalation consequences. Late delivery is associated with retention falling from 2.9% to 0.5% and review scores from 4.29 to 2.27; this cohort is the primary driver | Seller Operations | 100% of high-risk sellers contacted within 30 days; 60-day improvement plans in place for all High Value / High Risk sellers |
 | 3 | For High Value / High Risk sellers, assign dedicated account managers and begin co-designed improvement plans before enforcement | Commercial Director | Improvement plans in place for all HV/HR sellers within 30 days |
 | 4 | Classify all 1,234 leakage events by seller and root cause. Notify sellers with 3+ leakage events. Launch win-back campaign for all 1,234 affected customers | Seller Operations / CRM | Win-back campaign live within 14 days |
 | 5 | Brief the CCO on the 2.9% retention rate and 0.5% post-late-delivery retention, and agree retention as highest-priority commercial programme | Chief Commercial Officer | Retention programme resourced and workplan agreed within 30 days |
@@ -480,7 +475,7 @@ The Power BI dashboard contains five stakeholder-facing pages aligned to the bus
 
 | # | Action | Owner | Success Measure |
 |---|---|---|---|
-| 6 | Build automated post-purchase email trigger at day 20 to 25 after first delivery. Include category recommendation and time-limited incentive. Note: 1,346 customers returned within 30 days organically — that is the floor this programme must beat | CRM / Marketing | Click-to-second-purchase rate tracked; 34-day median used as benchmark |
+| 6 | Build automated post-purchase email trigger at day 20 to 25 after first delivery. Include category recommendation and time-limited incentive. Note: 1,346 customers returned within 30 days organically, and that is the floor this programme must beat | CRM / Marketing | Click-to-second-purchase rate tracked; 34-day median used as benchmark |
 | 7 | Route all 1-star and 2-star reviews into a customer recovery workflow immediately after submission | CRM / Customer Experience | Recovery conversion rate tracked; low-review second-purchase rate measured |
 | 8 | Introduce seller routing logic that steers new customer orders away from sellers with above-average late rates | Platform Operations / Technology | First-order late rate for new customers tracked separately; improvement monitored monthly |
 | 9 | Implement proactive customer communication for orders flagged at late-delivery risk, before the estimated delivery date | Operations / CRM | Customer satisfaction score for flagged orders tracked versus unflagged late orders |
@@ -504,14 +499,14 @@ The Power BI dashboard contains five stakeholder-facing pages aligned to the bus
 |---|---|---|
 | 1 | All revenue figures represent GMV, not Nexora net platform revenue. The Olist dataset does not include seller commission rates. The CCO must apply internal commission rate data to convert all GMV and leakage figures into net revenue impact. | Critical |
 | 2 | Observed associations between delivery performance and retention (2.9% on-time vs 0.5% post-late repeat rate) are correlational findings from this dataset. They are strong and directionally reliable but should not be treated as causal without controlled analysis. This caveat applies to all findings linking delivery status to review scores and repeat purchase behaviour. | Moderate |
-| 3 | All revenue figures in the leakage analysis use item_price only, treating freight as a pass-through cost excluded from leakage calculations. The GMV leakage rate (0.6%) is calculated as leakage revenue divided by total GMV including leakage — this is the correct commercial denominator but is not directly comparable to a gross revenue leakage rate that includes freight. | Moderate |
+| 3 | All revenue figures in the leakage analysis use item_price only, treating freight as a pass-through cost excluded from leakage calculations. The GMV leakage rate (0.6%) is calculated as leakage revenue divided by total GMV including leakage; this is the correct commercial denominator but is not directly comparable to a gross revenue leakage rate that includes freight. | Moderate |
 | 4 | The retention denominator is 93,358 (customers with at least one delivered order), not 96,096 (all registered customers). Customers whose orders were never delivered had no transactional opportunity to return. Using 93,358 is the correct methodological choice for a commercial retention calculation. The headline figure of 96,096 is used for context only. | Methodological note |
 | 5 | Review scores are not available for all delivered orders. Review-based KPIs (average review score, negative review rate, review score by delivery status) are calculated against reviewed orders only, not total delivered orders. | Moderate |
 | 6 | The dim_customer table was rebuilt to resolve 122 duplicate customer_unique_id rows caused by customers placing orders from multiple states. The fix uses GROUP BY customer_unique_id with MAX(customer_state) and MAX(customer_city). Post-fix unique customer count of 96,096 is confirmed. | Low |
 | 7 | The first quarter of the dataset (October to December 2016) reflects platform ramp-up rather than steady-state operations. Order volumes in this period are substantially lower than 2017 onward. Time-series trend analysis should exclude or flag this period to avoid ramp-up distortion. | Low |
 | 8 | Seller tiering thresholds (Top, Mid, Tail) and the high-risk seller classification are analytical decisions defined for this project, not Nexora business rules. Thresholds are documented in the DAX measures file and are adjustable via slicers in the Power BI dashboard. | Low |
-| 9 | The original Olist dataset is provided as nine separate CSV files. Joins across orders, customers, order items, sellers, products, payments, reviews, and category translation rely on correct use of business keys such as `order_id`, `customer_id`, `product_id`, and `seller_id`. | Moderate — incorrect joins could duplicate records or distort KPI outputs. |
-| 10 | The geolocation dataset contains multiple rows per zip code prefix and cannot be joined directly to transaction-level data without aggregation. | Moderate — direct joins could inflate records or distort geographic analysis. |
+| 9 | The original Olist dataset is provided as nine separate CSV files. Joins across orders, customers, order items, sellers, products, payments, reviews, and category translation rely on correct use of business keys such as `order_id`, `customer_id`, `product_id`, and `seller_id`. Incorrect join logic could duplicate records or distort KPI outputs. | Moderate |
+| 10 | The geolocation dataset contains multiple rows per zip code prefix and cannot be joined directly to transaction-level data without aggregation. Direct joins could inflate records or distort geographic analysis. | Moderate |
 
 ---
 
@@ -520,16 +515,16 @@ The Power BI dashboard contains five stakeholder-facing pages aligned to the bus
 | Metric | Result | Target | Gap | Status |
 |---|---|---|---|---|
 | Total GMV | R$15.42M | R$18.0M | -R$2.58M | Red |
-| Average Order Value | R$159.8 | > R$160 | -R$0.2 below benchmark | Amber |
+| Average Order Value | R$172 | > R$160 | Above benchmark | Green |
 | Customer Retention Rate | 2.9% | 15% | -12.1pp | Red |
 | First-to-Second Purchase Rate | 2.9% | 25% | -22.1pp | Red |
 | On-Time Delivery Rate | 93.2% | >= 95% | -1.8pp | Amber |
 | Late Delivery Rate | 6.8% | <= 5.0% | +1.8pp above ceiling | Amber |
-| Avg Review Score — All Delivered | 4.08 / 5.0 | 4.5 / 5.0 | -0.42 | Red |
-| Avg Review Score — On-Time Orders | 4.29 / 5.0 | 4.5 / 5.0 | -0.21 | Amber |
-| Avg Review Score — Late Orders | 2.27 / 5.0 | 4.5 / 5.0 | -2.23 | Red |
-| Avg Fulfilment Days — On-Time | 10.9 days | <= 12 days | On target | Green |
-| Avg Fulfilment Days — Late | 33.8 days | <= 12 days | +21.9 days | Red |
+| Avg Review Score (All Delivered) | 4.08 / 5.0 | 4.5 / 5.0 | -0.42 | Red |
+| Avg Review Score (On-Time Orders) | 4.29 / 5.0 | 4.5 / 5.0 | -0.21 | Amber |
+| Avg Review Score (Late Orders) | 2.27 / 5.0 | 4.5 / 5.0 | -2.23 | Red |
+| Avg Fulfilment Days (On-Time) | 10.9 days | <= 12 days | On target | Green |
+| Avg Fulfilment Days (Late) | 33.8 days | <= 12 days | +21.9 days | Red |
 | Freight Cost Ratio | 14.3% | <= 15% | On target | Green |
 | Average Freight per Order | R$22.79 | <= R$20 | +R$2.79 above benchmark | Amber |
 | GMV Leakage Rate | 0.6% | <= 1% | On target | Signal |
@@ -538,15 +533,15 @@ The Power BI dashboard contains five stakeholder-facing pages aligned to the bus
 | Retention after On-Time Delivery | 2.9% | 15% | -12.1pp | Red |
 | Retention after Late Delivery | 0.5% | 15% | -14.5pp | Red |
 | Repeat Customer GMV Share | 4.7% | Monitor | Disproportionate vs 2.9% headcount | Reference |
-| High-Risk Sellers | 577 | ≤10% of registered sellers | +8.6pp above threshold | Red |
+| High-Risk Seller Share | 18.6% (577 sellers) | <= 10% of sellers | +8.6pp above threshold | Red |
 | Top-Tier Seller GMV Share | ~54% | Monitor | 4.98% of sellers | Reference |
 | Revenue per Customer | ~R$165 | >= R$250 | -R$85 | Red |
 | Cancellation Rate | < 0.01% | <= 2% | On target | Green |
 | Median Days to Return | 34 days | Inform | Intervention window: day 20 to 25 | Reference |
 | Average Days to Return | 88 days | Inform | Use median for campaign timing | Reference |
-| Late Rate — Alagoas | 21.4% | <= 5% | +16.4pp above ceiling | Red |
-| Late Rate — Maranhao | 17.4% | <= 5% | +12.4pp above ceiling | Red |
-| Late Rate — Sergipe | 15.1% | <= 5% | +10.1pp above ceiling | Red |
+| Late Rate: Alagoas | 21.4% | <= 5% | +16.4pp above ceiling | Red |
+| Late Rate: Maranhao | 17.4% | <= 5% | +12.4pp above ceiling | Red |
+| Late Rate: Sergipe | 15.1% | <= 5% | +10.1pp above ceiling | Red |
 
 **RAG key:** Green = at or above target. Amber = within 5 percentage points of target. Red = more than 5 percentage points below target. For lower-is-better metrics the RAG logic is inverted. Signal = metric is below the concern threshold but warrants monitoring; the leakage rate never receives Green status regardless of volume. Reference = informational metric with no RAG assignment.
 
