@@ -48,7 +48,7 @@ All relationships are single-direction, one-to-many from dimension to fact table
 
 Everwell Care Services Ltd isn't ready for inspection. Over 68,973 visits between January 2024 and December 2025, we hit a 57.65% completion rate and 59.69% delivery rate. That's well below the 95% target set by commissioners and the CQC.
 
-Below is the overview page from the Power BI dashboard. Other examples are included throughout this report. The entire interactive dashboard can be seen **[here](#)**
+Below is the overview page from the Power BI dashboard. Other examples are included throughout this report. 
 
 <img width="772" height="541" alt="Screenshot 2026-04-19 080102" src="https://github.com/user-attachments/assets/2fd227ae-17fa-4498-83db-3530d8e4fa6f" />
 &nbsp;

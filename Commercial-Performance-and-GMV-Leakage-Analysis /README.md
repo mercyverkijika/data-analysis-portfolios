@@ -1,4 +1,4 @@
-# Commercial Performance & GMV Leakage Analysis - Nexora Commerce Ltd
+# Commercial Performance & Revenue Leakage Analysis - Nexora Commerce Ltd
 
 
 
@@ -102,7 +102,7 @@ The three most important findings are:
 
 **1. The platform is R$2.58M short of its GMV target and has no structural mechanism in place to close the gap.**
 
-R$15.42M of GMV against an R$18.0M target is a 14.3% shortfall. Monthly GMV grew steadily through 2017 and into mid-2018 but shows plateau behaviour in the final months of the dataset, the period when compounding from repeat purchase should be accelerating growth if retention were functioning. AOV of R$172 is healthy. The problem is frequency. A platform where 97% of customers never return cannot build GMV momentum regardless of how many new sellers it recruits. Filling the top of the funnel while losing almost all customers at the bottom is not a growth model; it is a substitution treadmill.
+R$15.42M of GMV against an R$18.0M target is a 14.3% shortfall. Monthly GMV grew steadily through 2017 and into mid-2018 but shows plateau behaviour in the final months of the dataset, the period when compounding from repeat purchase should be accelerating growth if retention were functioning. AOV of R$159.8 is broadly in line with the R$160 benchmark. The problem is frequency. A platform where 97% of customers never return cannot build GMV momentum regardless of how many new sellers it recruits. Filling the top of the funnel while losing almost all customers at the bottom is not a growth model; it is a substitution treadmill.
 
 > **Suggested visuals:** Monthly GMV trend line (with R$18M target reference line) to show growth trajectory and plateau. GMV by product category bar chart to identify which categories are driving volume. Revenue waterfall showing the split between delivered GMV, leakage, and the target gap.
 
@@ -114,13 +114,11 @@ R$15.42M of GMV against an R$18.0M target is a 14.3% shortfall. Monthly GMV grew
 
 Of every R$1 in platform GMV, R$0.86 is product revenue and R$0.14 is freight charged to the customer. The average freight value per order is R$22.79, against an average product price of R$120.65, putting freight at roughly 19 cents per dollar of product value. That 14.3% platform average sits just inside the 15% ceiling, but averages at marketplace scale routinely obscure the extremes that drive customer behaviour. A low-ticket category with a high freight cost creates a purchase economics problem that suppresses conversion and repeat order rates in ways that aggregate GMV metrics will not surface. The platform currently has no visibility into freight ratios at category or state level, which means it cannot identify which segments are structurally uncompetitive on price-to-delivery cost.
 
-> **Suggested visuals:** Donut or stacked bar showing product revenue versus freight as a proportion of total GMV. Table or bar chart of freight cost ratio by product category to surface categories above the 15% ceiling. State-level map with freight ratio heat coding.
 
 **3. 1,234 leakage orders represent R$97.24K in product revenue the platform attempted but failed to convert.**
 
 625 cancelled and 609 unavailable orders produced a GMV leakage rate of 0.6%, representing R$97.24K in committed product revenue that failed to convert to a delivered transaction. The 0.6% rate is measured against total GMV including freight, which is the correct commercial denominator: it reflects what the platform processed versus what it completed. The absolute figure understates the true commercial cost. Each leakage event is a customer who initiated a purchase, committed intent, and then experienced a fulfilment failure. The downstream damage (a customer who is now unlikely to return and who may leave a negative review of an order they never received) is worth more commercially than the recovered unit revenue. Leakage at this volume is manageable and traceable to specific sellers, but the platform currently has no seller-level leakage monitoring in place.
 
-> **Suggested visuals:** KPI card showing leakage orders count and leakage revenue with RAG status. Leakage breakdown bar chart (cancelled versus unavailable). Seller-level leakage table showing which sellers account for the highest share of leakage events.
 
 ---
 
@@ -142,13 +140,11 @@ There is no post-purchase engagement infrastructure on the platform. No triggere
 
 The 2,801 returning customers represent 2.9% of the customer base but account for 4.7% of total GMV, a 1.6x CLV ratio achieved with zero retention investment. In marketplace economics, the ratio of returning customer CLV to one-time customer CLV determines whether retention investment has better unit economics than acquisition. At 1.6x, without any infrastructure in place, the case for retention investment over marginal acquisition spend is clear. A platform that moved retention from 2.9% to 6% while holding AOV constant would generate the GMV equivalent of acquiring roughly 3,000 additional first-time customers at zero acquisition cost.
 
-> **Suggested visuals:** Clustered bar or side-by-side KPI comparison showing average revenue per one-time customer versus average revenue per returning customer. CLV gap callout card showing the 1.6x GMV multiplier. Headcount vs GMV share comparison (2.9% of customers, 4.7% of GMV) to make the case for retention investment visible at executive level.
 
 **3. Half of the customers who will ever return do so within 34 days. The intervention window is day 20 to 25 after first delivery.**
 
 The median time between first and last order among the 2,801 returning customers is 34 days. The mean is 88 days, stretched by a long tail of late returners. In absolute terms, 1,346 customers returned within the first 30 days, nearly half of all returning customers, buying again before the end of their first month. The median is the number that matters for campaign design. It says that if the platform does nothing by day 34, half of the returnable customer pool has already made their repurchase decision, with or without any commercial prompt. A re-engagement trigger at day 20 to 25 post-delivery catches customers at their highest-intent window, before the decision is locked in either direction.
 
-> **Suggested visuals:** Histogram or bar chart of days-to-return distribution among returning customers, with a vertical reference line at the 34-day median and an annotation marking the 1,346 customers who returned within 30 days. KPI cards for median days to return (34 days) and mean days to return (88 days) with a label explaining the spread.
 
 <!-- Add Retention timeline visual screenshot here -->
 
@@ -172,7 +168,6 @@ The median time between first and last order among the 2,801 returning customers
 
 Average fulfilment for on-time orders is 10.9 days from order placement to delivery. For late orders it is 33.8 days, a 22.9-day difference and a 3.1x ratio. A customer who expects delivery in 10 days and waits 34 days has not experienced a mildly late delivery. They have experienced a fulfilment failure of a scale that will almost certainly prevent them from placing a second order. The 33.8-day figure is consistent with seller dispatch delays compounding with carrier transit time: a seller who holds an order for 15 to 20 days before dispatching, combined with 10 to 15 days of carrier transit, produces the 34-day average naturally. The delivery date estimation model is not accounting for this seller-level variance, so customers are not being warned that their order is at risk of late delivery.
 
-> **Suggested visuals:** Side-by-side KPI cards showing on-time average fulfilment (10.9 days) versus late average fulfilment (33.8 days) with a computed gap label. Average delay days card for late orders. Scatter or bar of fulfilment days by seller tier to show how performance varies across the seller base.
 
 <!-- Add Fulfilment gap visual screenshot here -->
 
@@ -302,16 +297,16 @@ The olist_geolocation dataset contains multiple rows per zip code prefix, as the
 nexora-commercial-performance-analysis
  ┣ sql
  ┃ ┣ 00_database_setup.sql
- ┃ ┣ 01_profiling.sql
+ ┃ ┣ 01_data_profiling.sql
  ┃ ┣ 02_clean_views.sql
  ┃ ┣ 02b_distributions.sql
  ┃ ┣ 03_analysis.sql
- ┃ ┗ 04_dimensions.sql
+ ┃ ┗ 4_dimensions.sql
  ┣ excel
- ┃ ┗ DQ_issues_log.xlsx
+ ┃ ┗ nexora_DQ_issues_log.xlsx
  ┣ docs
  ┃ ┣ 01_analysis_report.md
- ┃ ┗ 02_Project_Brief.md
+ ┃ ┗ 02_project_bried.md
  ┗ README.md
 ```
 
