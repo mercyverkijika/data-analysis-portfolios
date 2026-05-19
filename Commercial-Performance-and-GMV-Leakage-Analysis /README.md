@@ -83,11 +83,11 @@ Below is the overview page from the Power BI dashboard. Other examples are inclu
 
 The three most important findings are:
 
-> **1.** Customer retention is extremely weak. Only **2.9%** of customers with at least one delivered order returned for another purchase, meaning **97.1%** placed one order and did not return.
+- **1.** Customer retention is extremely weak. Only **2.9%** of customers with at least one delivered order returned for another purchase, meaning **97.1%** placed one order and did not return.
 
-> **2.** Late delivery is strongly associated with weaker customer experience. Late orders received an average review score of **2.27**, compared with **4.29** for on-time orders. Customers whose first order arrived late were also far less likely to return.
+- **2.** Late delivery is strongly associated with weaker customer experience. Late orders received an average review score of **2.27**, compared with **4.29** for on-time orders. Customers whose first order arrived late were also far less likely to return.
 
-> **3.** Seller performance risk is concentrated. **577 sellers** are classified as high-risk, representing **18.6%** of registered sellers. These sellers require structured intervention because poor delivery and review performance can affect retention and future GMV.
+- **3.** Seller performance risk is concentrated. **577 sellers** are classified as high-risk, representing **18.6%** of registered sellers. These sellers require structured intervention because poor delivery and review performance can affect retention and future GMV.
 
 
 &nbsp;
