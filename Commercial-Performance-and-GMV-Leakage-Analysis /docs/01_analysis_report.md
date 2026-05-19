@@ -1,4 +1,4 @@
-# Commercial Performance & Revenue Leakage Analysis - Nexora Commerce Ltd
+# Commercial Performance & GMV Leakage Analysis - Nexora Commerce Ltd
 
 
 
@@ -76,7 +76,8 @@ Nexora Commerce Ltd generated **R$15.42M in GMV** across **96,478 delivered orde
 
 Below is the overview page from the Power BI dashboard. Other examples are included throughout this README. The full interactive dashboard can be seen **[here](#)**
 
-<!-- Add Executive Summary dashboard screenshot here -->
+<img width="905" height="682" alt="Screenshot 2026-05-19 092555" src="https://github.com/user-attachments/assets/681312cb-fba1-422e-affe-1efdb801f102" />
+
 
 &nbsp;
 
@@ -88,10 +89,6 @@ The three most important findings are:
 
 > **3.** Seller performance risk is concentrated. **577 sellers** are classified as high-risk, representing **18.6%** of registered sellers. These sellers require structured intervention because poor delivery and review performance can affect retention and future GMV.
 
-<!-- Add KPI scorecard screenshot here -->
-
-&nbsp;
-
 *All revenue figures are GMV. See Assumptions and Caveats.*
 
 ---
@@ -100,15 +97,14 @@ The three most important findings are:
 
 ### Revenue Performance and Leakage
 
+<img width="859" height="645" alt="Screenshot 2026-05-19 054627" src="https://github.com/user-attachments/assets/47876a2b-82c2-4dca-aacb-3d94da65c3c6" />
+
+&nbsp;
+
+
 **1. The platform is R$2.58M short of its GMV target and has no structural mechanism in place to close the gap.**
 
 R$15.42M of GMV against an R$18.0M target is a 14.3% shortfall. Monthly GMV grew steadily through 2017 and into mid-2018 but shows plateau behaviour in the final months of the dataset, the period when compounding from repeat purchase should be accelerating growth if retention were functioning. AOV of R$159.8 is broadly in line with the R$160 benchmark. The problem is frequency. A platform where 97% of customers never return cannot build GMV momentum regardless of how many new sellers it recruits. Filling the top of the funnel while losing almost all customers at the bottom is not a growth model; it is a substitution treadmill.
-
-> **Suggested visuals:** Monthly GMV trend line (with R$18M target reference line) to show growth trajectory and plateau. GMV by product category bar chart to identify which categories are driving volume. Revenue waterfall showing the split between delivered GMV, leakage, and the target gap.
-
-<!-- Add Revenue Performance dashboard screenshot here -->
-
-&nbsp;
 
 **2. Freight charges account for 14.3% of every transaction, sitting just inside the ceiling but with category and regional variation the platform cannot currently see.**
 
@@ -124,15 +120,14 @@ Of every R$1 in platform GMV, R$0.86 is product revenue and R$0.14 is freight ch
 
 ### Customer Retention and Lifetime Value
 
+<img width="911" height="683" alt="Screenshot 2026-05-19 092227" src="https://github.com/user-attachments/assets/5cf301d9-7927-4e68-a88b-6158a3db2a22" />
+
+&nbsp;
+
+
 **1. 97% of customers never came back. This is the most commercially material finding in the dataset.**
 
 Of 96,096 registered customers, 90,557 placed exactly one order and exited permanently. Only 2,573 placed a second order, 181 placed a third, and 47 placed four or more. Total returning customers: 2,801, a 2.9% retention rate against a 15% target. That frequency collapse is not a rounding error in the data; it is the defining commercial reality of the platform. The consequence is that the platform cannot compound the return on its customer acquisition spend. Every cohort of new customers generates exactly one revenue cycle before being written off, making sustained GMV growth wholly dependent on the next cohort of first-time buyers. In a maturing market with rising acquisition costs, that is not a viable long-term position.
-
-> **Suggested visuals:** Large KPI cards contrasting one-time customers (90,557) versus returning customers (2,801). Orders-per-customer distribution bar chart, where the vertical drop after 1 order is the entire story. Retention rate gauge showing 2.9% versus 15% target.
-
-<!-- Add Customer Retention dashboard screenshot here -->
-
-&nbsp;
 
 There is no post-purchase engagement infrastructure on the platform. No triggered email, no loyalty programme, no personalised re-engagement. The 2,801 customers who returned did so without any commercial prompt. They represent what organic retention looks like with zero investment. It is a baseline, not a ceiling.
 
@@ -145,63 +140,41 @@ The 2,801 returning customers represent 2.9% of the customer base but account fo
 
 The median time between first and last order among the 2,801 returning customers is 34 days. The mean is 88 days, stretched by a long tail of late returners. In absolute terms, 1,346 customers returned within the first 30 days, nearly half of all returning customers, buying again before the end of their first month. The median is the number that matters for campaign design. It says that if the platform does nothing by day 34, half of the returnable customer pool has already made their repurchase decision, with or without any commercial prompt. A re-engagement trigger at day 20 to 25 post-delivery catches customers at their highest-intent window, before the decision is locked in either direction.
 
-
-<!-- Add Retention timeline visual screenshot here -->
-
-&nbsp;
-
 ---
 
 ### Delivery Experience and Review Impact
+
+<img width="903" height="688" alt="Screenshot 2026-05-19 092533" src="https://github.com/user-attachments/assets/c940fcb8-ac2b-4b3a-a255-8093049e4a92" />
+
+&nbsp;
+
 
 **1. A 6.8% late delivery rate exceeds the 5% ceiling and is driven by a concentrated seller cohort, not by systemic logistics failure.**
 
 6.8% of delivered orders arrived after the estimated delivery date, 1.8 percentage points above the ceiling. The distinction between a platform-wide logistics problem and a seller-quality problem matters enormously for the remedy. Regional analysis surfaces meaningful state-level variation: Alagoas (AL) records a 21.4% late rate, Maranhão (MA) 17.4%, and Sergipe (SE) 15.1%, all more than double the platform ceiling. Sao Paulo, which handles 42% of all order volume, performs broadly at the platform average, confirming the problem is not driven by the highest-volume state. At seller level, 577 sellers individually exceed a 10% late rate while the remaining 81% of the seller base performs within or near target. The platform's late delivery problem has a precise geographic and seller-level address. It is not a logistics network problem. It is a seller management problem.
 
-> **Suggested visuals:** State-level choropleth map of late delivery rate to show regional concentration (AL, MA, and SE should light up clearly). Late rate KPI card with 5% target and 1.8pp gap. Seller late rate distribution histogram to show how concentrated the problem is in the 577-seller tail.
-
-<!-- Add Delivery Performance dashboard screenshot here -->
-
-&nbsp;
-
 **2. Late orders take 33.8 days to arrive. On-time orders take 10.9 days. The gap is 3.1x and it is not a rounding error in the data.**
 
 Average fulfilment for on-time orders is 10.9 days from order placement to delivery. For late orders it is 33.8 days, a 22.9-day difference and a 3.1x ratio. A customer who expects delivery in 10 days and waits 34 days has not experienced a mildly late delivery. They have experienced a fulfilment failure of a scale that will almost certainly prevent them from placing a second order. The 33.8-day figure is consistent with seller dispatch delays compounding with carrier transit time: a seller who holds an order for 15 to 20 days before dispatching, combined with 10 to 15 days of carrier transit, produces the 34-day average naturally. The delivery date estimation model is not accounting for this seller-level variance, so customers are not being warned that their order is at risk of late delivery.
-
-
-<!-- Add Fulfilment gap visual screenshot here -->
-
-&nbsp;
 
 **3. The 4.08 average review score sits 0.42 points below target and is being suppressed by a delivery performance problem, not a product quality problem.**
 
 4.08 out of 5.0 against a 4.5 target is a gap that can close, but not through review management or customer service initiatives alone. The data is unambiguous: on-time orders average a 4.29 review score. Late orders average 2.27. That 2.02-point gap between the same platform, the same products, and the same sellers, differentiated only by whether the order arrived on time, is not a product quality problem. It is a delivery quality problem. The 4.08 platform average is a weighted blend of those two populations, and it will not move until the 6.8% late delivery rate moves. The same root cause is suppressing both KPIs simultaneously. There is also a direct retention link: customers who received an on-time delivery retained at 2.9%, while customers who experienced a late delivery retained at just 0.5%, a 5.8x gap that makes late delivery functionally equivalent to permanent customer loss.
 
-> **Suggested visuals:** Side-by-side review score KPI cards: on-time orders (4.29) versus late orders (2.27) with a gap callout of −2.02 points. Review score distribution bar chart split by delivery status to show how the 1-star and 2-star bars shift between the two populations. Retention rate by delivery status comparison (2.9% vs 0.5%) to connect the delivery-review-retention chain in a single visual.
-
----
-
 ### Seller Portfolio Performance
+
+<img width="905" height="682" alt="Screenshot 2026-05-19 092555" src="https://github.com/user-attachments/assets/a19257a1-14ac-4093-a0fc-1d5467ed5d8c" />
+
+&nbsp;
+
 
 **1. Revenue is highly concentrated in a small seller cohort, and the platform has no mechanism to identify or protect those relationships.**
 
 3,025 sellers generated R$15.42M in GMV across the period, an average of approximately R$5,100 per seller. That average is distorted by extreme concentration at the top: the highest-performing 4.98% of sellers (roughly 150 sellers) account for 54% of total GMV. The remaining 95% share the other 46%. In Lorenz curve terms, the platform's seller base is operating well inside the inequality boundary that would be expected even from a healthy two-sided marketplace. What is not standard is having no commercial framework to manage this concentration. The platform's 150 highest-GMV sellers currently receive the same treatment as sellers generating a few hundred reais in annual transactions. There is no tiering, no account management, and no early warning system if a high-value seller begins moving volume to a competing marketplace.
 
-> **Suggested visuals:** Cumulative GMV curve (Lorenz-style) with the 4.98%/54% concentration point annotated; this alone tells the story. Revenue by seller tier stacked bar showing Top versus Mid versus Tail GMV split. Top 10 sellers by revenue table to make the concentration human-scale.
-
-<!-- Add Seller Portfolio dashboard screenshot here -->
-
-&nbsp;
-
 **2. 577 sellers have a late delivery rate above 10%. They are a concentrated, identifiable source of platform-level delivery failure and its downstream commercial damage.**
 
 577 sellers (19% of the active seller base) individually exceed a 10% late rate. The remaining 81% perform at or below the ceiling. This distribution is commercially significant because it means the platform's delivery problem has a precise address. These are not anonymous carriers or opaque logistics networks. These are sellers with IDs, catalogues, and order histories. The platform can contact them, issue performance notices, track improvement, and remove them if improvement does not materialise. What is missing is the commercial and operational framework to do this at scale.
-
-> **Suggested visuals:** Seller quadrant bubble chart (GMV on x-axis, late rate on y-axis, bubble size representing order volume, colour by quadrant) to surface the High Value / High Risk cohort as the priority intervention group. High risk sellers table showing seller ID, GMV, late rate, and quadrant classification. KPI card showing high risk seller count versus total active sellers.
-
-<!-- Add Seller quadrant and High Risk Sellers table screenshot here -->
-
-&nbsp;
 
 The High Value / High Risk sellers deserve separate treatment. They are simultaneously generating meaningful GMV and systematically damaging the delivery experience and review scores of the customers who buy from them. Removing them without a commercial plan costs revenue. Retaining them without an improvement plan costs retention. Both sides of that trade-off need active management rather than the passive monitoring that currently exists.
 
