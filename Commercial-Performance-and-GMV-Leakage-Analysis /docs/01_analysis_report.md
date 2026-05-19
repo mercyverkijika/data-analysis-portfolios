@@ -261,6 +261,11 @@ Customer retention is measured using customer_unique_id, the stable cross-order 
 ### Section 1: Executive Commercial Health
 
 ---
+<img width="851" height="639" alt="Screenshot 2026-05-19 054230" src="https://github.com/user-attachments/assets/a8ee963d-bd1e-466d-9ddd-9b3da32f0f5d" />
+
+
+&bnsp;
+
 
 #### 1: Nexora shows strong GMV growth, but commercial health is weakened by retention and fulfilment risk
 
@@ -290,6 +295,10 @@ Customer retention is measured using customer_unique_id, the stable cross-order 
 ### Section 2: Revenue Performance and GMV Leakage Drivers
 
 ---
+
+<img width="859" height="645" alt="Screenshot 2026-05-19 054627" src="https://github.com/user-attachments/assets/84ba45b1-1d3c-4280-974f-c940cb1175b9" />
+
+&bnsp;
 
 #### 1: Recorded GMV leakage is low at 0.6%, but it is concentrated in specific drivers and categories
 
@@ -330,6 +339,11 @@ Customer retention is measured using customer_unique_id, the stable cross-order 
 ### Section 3: Customer Retention and Lifetime Value
 
 ---
+
+<img width="904" height="686" alt="Screenshot 2026-05-19 103027" src="https://github.com/user-attachments/assets/fa69e33a-05a5-416e-970a-2458e4410684" />
+
+
+&bnsp;
 
 #### 1: Nexora has a severe one-time customer problem that compounds with each new acquisition cohort
 
@@ -385,6 +399,11 @@ Customer retention is measured using customer_unique_id, the stable cross-order 
 
 ---
 
+<img width="957" height="693" alt="Screenshot 2026-05-07 052917" src="https://github.com/user-attachments/assets/84885de9-58de-411f-bdf2-9fb69e317b32" />
+
+&bnsp;
+
+
 #### 1: Late delivery is a customer trust failure with a quantified impact on review scores
 
 **Finding:** Late delivery produces a qualitatively different customer experience that is measurable in review data and directly connected to retention outcomes. This is not a logistics inconvenience. It is a commercial failure event.
@@ -426,6 +445,12 @@ Customer retention is measured using customer_unique_id, the stable cross-order 
 ### Section 5: Seller Portfolio and Commercial Risk
 
 ---
+
+<img width="905" height="682" alt="Screenshot 2026-05-19 092555" src="https://github.com/user-attachments/assets/0bab592a-4134-4df7-b837-7f532fb4fb71" />
+
+
+&bnsp;
+
 
 #### 1: Seller risk must be managed as a portfolio problem, not a case-by-case operational issue
 
