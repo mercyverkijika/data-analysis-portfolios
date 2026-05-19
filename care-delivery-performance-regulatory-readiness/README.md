@@ -51,15 +51,17 @@ Everwell Care Services Ltd isn't ready for inspection. Over 68,973 visits betwee
 Below is the overview page from the Power BI dashboard. Other examples are included throughout this report. 
 
 <img width="772" height="541" alt="Screenshot 2026-04-19 080102" src="https://github.com/user-attachments/assets/2fd227ae-17fa-4498-83db-3530d8e4fa6f" />
+
 &nbsp;
 
 The three most important findings are:
 
-> **1.** More than 40% of all accountable visits were either missed entirely (14.80%) or delivered short of the commissioned duration (27.55%), leaving clients routinely without their full care.
+- More than 40% of all accountable visits were either missed entirely (14.80%) or delivered short of the commissioned duration (27.55%), leaving clients routinely without their full care.
 
-> **2.** 52% of welfare concerns identified in carer notes were never formally escalated as safeguarding alerts, creating both a statutory compliance failure and direct client safety risk.
+- 52% of welfare concerns identified in carer notes were never formally escalated as safeguarding alerts, creating both a statutory compliance failure and direct client safety risk.
 
-> **3.** Carers are spending 37.88% of their total field time travelling rather than delivering care, a structural scheduling inefficiency driving short visits, late arrivals, and carer overload across all 25 service areas.
+- Carers are spending 37.88% of their total field time travelling rather than delivering care, a structural scheduling inefficiency driving short visits, late arrivals, and carer overload across all 25 service areas.
+
 
 <img width="384" height="297" alt="Screenshot 2026-04-19 075240" src="https://github.com/user-attachments/assets/698bb919-3cbf-499f-8cda-e5610da9985d" />
 &nbsp;
