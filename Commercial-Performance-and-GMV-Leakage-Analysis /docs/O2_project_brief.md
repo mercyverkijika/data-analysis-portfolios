@@ -1,7 +1,7 @@
 # Project Brief
 ## Commercial Performance and GMV Leakage Analysis | Nexora Commerce Ltd
 
-**Document Type:** Project Brief (Updated) | **Status:** Final | **Date:** May 2026 | **Analyst:** Mercy Verkijika
+**Document Type:** Project Brief (Updated) | **Status:** Final | **Analyst:** Mercy Verkijika
 
 ---
 
